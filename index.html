@@ -1,343 +1,367 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"><meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<title>The Afnan Yaz Productions | Official Game Studio</title>
 
-    <title>The Afnan Yaz Productions | Official Game Studio</title>
+<meta name="description"
+      content="The Afnan Yaz Productions is an independent game studio creating Android games. Discover and download T-Rex Jungle Run and Highway Rush 2D.">
 
-    <meta name="description"
-          content="The Afnan Yaz Productions is an independent game studio creating Android games. Discover and download T-Rex Jungle Run and our latest games.">
+<meta name="keywords"
+      content="The Afnan Yaz Productions, Afnan Yaz Productions, Afnan Yaz, Android games, mobile games, T-Rex Jungle Run, Highway Rush 2D">
 
-    <meta name="keywords"
-          content="The Afnan Yaz Productions, Afnan Yaz Productions, Afnan Yaz, Android games, mobile games, T-Rex Jungle Run, T-Rex game">
+<meta name="author"
+      content="The Afnan Yaz Productions">
 
-    <meta name="author"
-          content="The Afnan Yaz Productions">
+<meta name="robots"
+      content="index, follow">
 
-    <meta name="robots"
-          content="index, follow">
+<meta name="google-site-verification"
+      content="ZeACEChF22ZR6L-upr85EX3WahBWdhCHl7Y7Pz_6yfo">
 
-    <meta name="google-site-verification"
-          content="ZeACEChF22ZR6L-upr85EX3WahBWdhCHl7Y7Pz_6yfo">
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    html {
+        scroll-behavior: smooth;
+    }
 
-        html {
-            scroll-behavior: smooth;
-        }
+    body {
+        font-family: Arial, sans-serif;
+        background: #080808;
+        color: white;
+    }
 
-        body{
-            font-family: Arial, sans-serif;
-            background: #080808;
-            color: white;
-        }
+    /* NAVBAR */
 
-        /* NAVBAR */
+    nav {
+        width: 100%;
+        padding: 20px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #0d0d0d;
+        border-bottom: 1px solid #222;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .logo {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .logo span {
+        color: #00ff88;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 25px;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        color: #00ff88;
+    }
+
+    /* HERO */
+
+    .hero {
+        min-height: 75vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 60px 20px;
+        background:
+            radial-gradient(circle at center,
+            #123525 0%,
+            #080808 55%);
+    }
+
+    .hero-content {
+        max-width: 800px;
+    }
+
+    .hero h1 {
+        font-size: clamp(40px, 8vw, 80px);
+        margin-bottom: 20px;
+        color: #ffffff;
+    }
+
+    .hero h1 span {
+        color: #00ff88;
+    }
+
+    .hero p {
+        color: #aaa;
+        font-size: 18px;
+        margin-bottom: 35px;
+    }
+
+    .hero-btn {
+        display: inline-block;
+        padding: 15px 30px;
+        background: #00ff88;
+        color: #000;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+
+    .hero-btn:hover {
+        transform: scale(1.05);
+    }
+
+    /* GAMES */
+
+    .games {
+        padding: 80px 8%;
+    }
+
+    .section-title {
+        text-align: center;
+        font-size: 40px;
+        margin-bottom: 50px;
+    }
+
+    .game-card {
+        max-width: 800px;
+        margin: 0 auto 35px;
+        background: #111;
+        border: 1px solid #242424;
+        border-radius: 18px;
+        padding: 30px;
+        transition: 0.3s;
+    }
+
+    .game-card:hover {
+        transform: translateY(-8px);
+        border-color: #00ff88;
+    }
+
+    .game-icon {
+        width: 120px;
+        height: 120px;
+        margin: auto auto 25px;
+        border-radius: 25px;
+        background: linear-gradient(135deg,
+                    #00ff88,
+                    #006b3c);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 60px;
+    }
+
+    .game-card h3 {
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 12px;
+        color: #ffffff;
+    }
+
+    .game-card p {
+        text-align: center;
+        color: #aaa;
+        line-height: 1.6;
+        margin-bottom: 25px;
+    }
+
+    .download {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        background: #00ff88;
+        color: #000;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+    }
+
+    .download:hover {
+        background: white;
+    }
+
+    /* ABOUT */
+
+    .about {
+        padding: 80px 8%;
+        text-align: center;
+        background: #0d0d0d;
+    }
+
+    .about h2 {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+    .about p {
+        max-width: 700px;
+        margin: auto;
+        color: #aaa;
+        line-height: 1.8;
+    }
+
+    /* FOOTER */
+
+    footer {
+        text-align: center;
+        padding: 30px;
+        color: #777;
+        border-top: 1px solid #222;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 600px) {
 
         nav {
-            width: 100%;
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #0d0d0d;
-            border-bottom: 1px solid #222;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo {
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        .logo span {
-            color: #00ff88;
+            padding: 18px 5%;
         }
 
         nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 25px;
-            font-weight: bold;
+            margin-left: 10px;
+            font-size: 14px;
         }
 
-        nav a:hover {
-            color: #00ff88;
-        }
-
-        /* HERO */
-
-        .hero {
-            min-height: 75vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 60px 20px;
-            background:
-                radial-gradient(circle at center,
-                #123525 0%,
-                #080808 55%);
-        }
-
-        .hero-content {
-            max-width: 800px;
-        }
-
-        .hero h1 {
-            font-size: clamp(40px, 8vw, 80px);
-            margin-bottom: 20px;
-            color: #ffffff;
-        }
-        }
-
-        .hero h1 span {
-            color: #00ff88;
-        }
-
-        .hero p {
-            color: #aaa;
-            font-size: 18px;
-            margin-bottom: 35px;
-        }
-
-        .hero-btn {
-            display: inline-block;
-            padding: 15px 30px;
-            background: #00ff88;
-            color: #000;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 8px;
-            transition: 0.3s;
-        }
-
-        .hero-btn:hover {
-            transform: scale(1.05);
-        }
-
-        /* GAMES */
-
-        .games {
-            padding: 80px 8%;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 40px;
-            margin-bottom: 50px;
-        }
-
-        .game-card {
-            max-width: 800px;
-            margin: auto;
-            background: #111;
-            border: 1px solid #242424;
-            border-radius: 18px;
-            padding: 30px;
-            transition: 0.3s;
-        }
-
-        .game-card:hover {
-            transform: translateY(-8px);
-            border-color: #00ff88;
-        }
-
-        .game-icon {
-            width: 120px;
-            height: 120px;
-            margin: auto auto 25px;
-            border-radius: 25px;
-            background: linear-gradient(135deg,
-                        #00ff88,
-                        #006b3c);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 60px;
-        }
-
-        .game-card h3 {
-            text-align: center;
-            font-size: 30px;
-            margin-bottom: 12px;
-                color: #ffffff;
-        }
-
-        .game-card p {
-            text-align: center;
-            color: #aaa;
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
-
-        .download {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            background: #00ff88;
-            color: #000;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-        }
-
-        .download:hover {
-            background: white;
-        }
-
-        /* ABOUT */
-
+        .games,
         .about {
-            padding: 80px 8%;
-            text-align: center;
-            background: #0d0d0d;
+            padding: 60px 5%;
         }
+    }
+</style>
 
-        .about h2 {
-            font-size: 40px;
-            margin-bottom: 20px;
-        }
+</head><body><nav>
+    <div class="logo">
+        THE <span>AFNAN YAZ</span>
+    </div>
 
-        .about p {
-            max-width: 700px;
-            margin: auto;
-            color: #aaa;
-            line-height: 1.8;
-        }
+    <div>
+        <a href="#games">Games</a>
+        <a href="#about">About</a>
+    </div>
+</nav>
 
-        /* FOOTER */
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: #777;
-            border-top: 1px solid #222;
-        }
+<section class="hero">
 
-        /* MOBILE */
+    <div class="hero-content">
 
-        @media (max-width: 600px) {
-
-            nav {
-                padding: 18px 5%;
-            }
-
-            nav a {
-                margin-left: 10px;
-                font-size: 14px;
-            }
-
-            .games,
-            .about {
-                padding: 60px 5%;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-    <nav>
-        <div class="logo">
+        <h1>
             THE <span>AFNAN YAZ</span>
-        </div>
-
-        <div>
-            <a href="#games">Games</a>
-            <a href="#about">About</a>
-        </div>
-    </nav>
-
-
-    <section class="hero">
-
-        <div class="hero-content">
-
-            <h1>
-                THE <span>AFNAN YAZ</span>
-                PRODUCTIONS
-            </h1>
-
-            <p>
-                Creating Games. Creating Worlds. 🎮
-            </p>
-
-            <a href="#games" class="hero-btn">
-                EXPLORE GAMES
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <section class="games" id="games">
-
-        <h2 class="section-title">
-            🎮 OUR GAMES
-        </h2>
-
-        <div class="game-card">
-
-            <div class="game-icon">
-                🦖
-            </div>
-
-            <h3>
-                T-Rex Jungle Run
-            </h3>
-
-            <p>
-                Run, jump and survive the jungle!
-                Experience the adventure of T-Rex Jungle Run
-                on Android.
-            </p>
-
-            <a
-                class="download"
-                href="app-debug (3).apk"
-                download>
-                ⬇ DOWNLOAD APK
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <section class="about" id="about">
-
-        <h2>
-            About Us
-        </h2>
+            PRODUCTIONS
+        </h1>
 
         <p>
-            Welcome to The Afnan Yaz Productions —
-            an independent game development studio
-            creating fun and exciting games for players.
+            Creating Games. Creating Worlds. 🎮
         </p>
 
-    </section>
+        <a href="#games" class="hero-btn">
+            EXPLORE GAMES
+        </a>
+
+    </div>
+
+</section>
 
 
-    <footer>
+<section class="games" id="games">
 
-        © 2026 The Afnan Yaz Productions.
-        All Rights Reserved.
+    <h2 class="section-title">
+        🎮 OUR GAMES
+    </h2>
 
-    </footer>
+
+    <!-- T-REX JUNGLE RUN -->
+
+    <div class="game-card">
+
+        <div class="game-icon">
+            🦖
+        </div>
+
+        <h3>
+            T-Rex Jungle Run
+        </h3>
+
+        <p>
+            Run, jump and survive the jungle!
+            Experience the adventure of T-Rex Jungle Run
+            on Android.
+        </p>
+
+        <a
+            class="download"
+            href="app-debug (3).apk"
+            download>
+            ⬇ DOWNLOAD APK
+        </a>
+
+    </div>
+
+
+    <!-- HIGHWAY RUSH 2D -->
+
+    <div class="game-card">
+
+        <div class="game-icon">
+            🏎️
+        </div>
+
+        <h3>
+            Highway Rush 2D
+        </h3>
+
+        <p>
+            Dodge traffic, race through the highway
+            and survive the rush in Highway Rush 2D!
+            Play the action-packed driving game on Android.
+        </p>
+
+        <a
+            class="download"
+            href="Highway-Rush-2D.apk"
+            download>
+            ⬇ DOWNLOAD HIGHWAY RUSH 2D
+        </a>
+
+    </div>
+
+</section>
+
+
+<section class="about" id="about">
+
+    <h2>
+        About Us
+    </h2>
+
+    <p>
+        Welcome to The Afnan Yaz Productions —
+        an independent game development studio
+        creating fun and exciting games for players.
+    </p>
+
+</section>
+
+
+<footer>
+
+    © 2026 The Afnan Yaz Productions.
+    All Rights Reserved.
+
+</footer>
 
 </body>
 </html>
