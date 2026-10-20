@@ -6,11 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>The Afnan Yaz Productions | Official Game Studio</title>
-
-    <meta name="description" content="Discover and download Android games from The Afnan Yaz Productions, including T-Rex Jungle Run, Highway Rush 2D and BMX Boy 3D.">
-
-    <meta name="keywords" content="The Afnan Yaz Productions, Android games, T-Rex Jungle Run, Highway Rush 2D, BMX Boy 3D">
-
+    <meta name="description" content="Download T-Rex Jungle Run, Highway Rush 2D and BMX Boy 3D Android games from The Afnan Yaz Productions.">
     <meta name="author" content="The Afnan Yaz Productions">
     <meta name="robots" content="index, follow">
 
@@ -33,10 +29,7 @@
             color: white;
         }
 
-        /* NAVIGATION */
-
         nav {
-            width: 100%;
             padding: 20px 8%;
             display: flex;
             justify-content: space-between;
@@ -53,7 +46,8 @@
             font-weight: bold;
         }
 
-        .logo span {
+        .logo span,
+        .hero h1 span {
             color: #00ff88;
         }
 
@@ -68,8 +62,6 @@
             color: #00ff88;
         }
 
-        /* HERO SECTION */
-
         .hero {
             min-height: 75vh;
             display: flex;
@@ -77,11 +69,7 @@
             align-items: center;
             text-align: center;
             padding: 60px 20px;
-            background: radial-gradient(
-                circle at center,
-                #123525 0%,
-                #080808 55%
-            );
+            background: radial-gradient(circle at center, #123525, #080808 65%);
         }
 
         .hero-content {
@@ -93,15 +81,11 @@
             margin-bottom: 20px;
         }
 
-        .hero h1 span {
-            color: #00ff88;
-        }
-
         .hero p {
             color: #aaa;
             font-size: 18px;
-            margin-bottom: 35px;
             line-height: 1.6;
+            margin-bottom: 35px;
         }
 
         .hero-btn {
@@ -119,8 +103,6 @@
             transform: scale(1.05);
         }
 
-        /* GAMES SECTION */
-
         .games {
             padding: 80px 8%;
         }
@@ -134,10 +116,10 @@
         .game-card {
             max-width: 800px;
             margin: 0 auto 35px;
+            padding: 30px;
             background: #111;
             border: 1px solid #242424;
             border-radius: 18px;
-            padding: 30px;
             transition: 0.3s;
         }
 
@@ -151,11 +133,7 @@
             height: 120px;
             margin: 0 auto 25px;
             border-radius: 25px;
-            background: linear-gradient(
-                135deg,
-                #00ff88,
-                #006b3c
-            );
+            background: linear-gradient(135deg, #00ff88, #006b3c);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -192,8 +170,6 @@
             background: white;
         }
 
-        /* ABOUT SECTION */
-
         .about {
             padding: 80px 8%;
             text-align: center;
@@ -212,8 +188,6 @@
             line-height: 1.8;
         }
 
-        /* FOOTER */
-
         footer {
             text-align: center;
             padding: 30px 15px;
@@ -221,8 +195,6 @@
             border-top: 1px solid #222;
             line-height: 1.8;
         }
-
-        /* MOBILE RESPONSIVE */
 
         @media (max-width: 600px) {
             nav {
@@ -260,12 +232,8 @@
 
 <body>
 
-    <!-- NAVIGATION -->
-
     <nav>
-        <div class="logo">
-            THE <span>AFNAN YAZ</span>
-        </div>
+        <div class="logo">THE <span>AFNAN YAZ</span></div>
 
         <div>
             <a href="#games">Games</a>
@@ -273,130 +241,70 @@
         </div>
     </nav>
 
-
-    <!-- HERO -->
-
     <section class="hero">
         <div class="hero-content">
-
-            <h1>
-                THE <span>AFNAN YAZ</span>
-                PRODUCTIONS
-            </h1>
-
-            <p>
-                Creating Games. Creating Worlds. 🎮
-            </p>
-
-            <a href="#games" class="hero-btn">
-                EXPLORE GAMES
-            </a>
-
+            <h1>THE <span>AFNAN YAZ</span> PRODUCTIONS</h1>
+            <p>Creating Games. Creating Worlds. 🎮</p>
+            <a href="#games" class="hero-btn">EXPLORE GAMES</a>
         </div>
     </section>
 
-
-    <!-- ALL GAMES -->
-
     <section class="games" id="games">
-
-        <h2 class="section-title">
-            🎮 OUR GAMES
-        </h2>
-
+        <h2 class="section-title">🎮 OUR GAMES</h2>
 
         <!-- T-REX JUNGLE RUN -->
-
         <div class="game-card">
-
             <div class="game-icon">🦖</div>
-
             <h3>T-Rex Jungle Run</h3>
-
             <p>
                 Run, jump and survive the jungle!
                 Experience the adventure of T-Rex Jungle Run
                 on Android.
             </p>
-
-            <a
-                class="download"
-                href="app-debug%20%283%29.apk"
-                download>
+            <a class="download" href="app-debug%20%283%29.apk" download>
                 ⬇ DOWNLOAD T-REX JUNGLE RUN
             </a>
-
         </div>
-
 
         <!-- HIGHWAY RUSH 2D -->
-
         <div class="game-card">
-
             <div class="game-icon">🏎️</div>
-
             <h3>Highway Rush 2D</h3>
-
             <p>
                 Dodge traffic, race through the highway
-                and survive the rush in Highway Rush 2D!
-                Play the driving game on Android.
+                and survive the rush! Play Highway Rush 2D
+                on Android.
             </p>
-
-            <a
-                class="download"
-                href="Highway-Rush-2D.apk"
-                download>
+            <a class="download" href="Highway-Rush-2D.apk" download>
                 ⬇ DOWNLOAD HIGHWAY RUSH 2D
             </a>
-
         </div>
 
-
         <!-- BMX BOY 3D -->
-
         <div class="game-card">
-
             <div class="game-icon">🚴</div>
-
             <h3>BMX Boy 3D</h3>
-
             <p>
                 Ride your BMX, perform awesome tricks
                 and enjoy the adventure in BMX Boy 3D!
                 Download and play on Android.
             </p>
-
-            <a
-                class="download"
-                href="bmx_boy_3d.apk"
-                download>
+            <a class="download" href="bmx_boy_3d%20%281%29.apk" download>
                 ⬇ DOWNLOAD BMX BOY 3D
             </a>
-
         </div>
-
     </section>
 
-
-    <!-- ABOUT -->
-
     <section class="about" id="about">
-
         <h2>About Us</h2>
-
         <p>
             Welcome to The Afnan Yaz Productions —
             an independent game development studio
             creating fun and exciting games for players.
-            Our mission is to bring original gaming
-            experiences to Android players.
+            Our mission is to bring gaming experiences
+            to Android players.
         </p>
-
     </section>
-
-
-    <!-- FOOTER -->
 
     <footer>
         © 2026 The Afnan Yaz Productions.<br>
