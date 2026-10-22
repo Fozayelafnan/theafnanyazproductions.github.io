@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta name="google-site-verification" content="ZeACEChF22ZR6L-upr85EX3WahBWdhCHl7Y7Pz_6yfo">
-    <meta name="description" content="Visit The Afnan Yaz Productions official game website and discover BMX Boy Classic, T-Rex Jungle Run and Highway Rush 2D.">
+
+    <meta name="description" content="Download BMX Boy, T-Rex Jungle Run and Highway Rush 2D from The Afnan Yaz Productions official game website.">
     <meta name="theme-color" content="#080d14">
 
     <title>The Afnan Yaz Productions | Official Game Studio</title>
@@ -166,6 +168,15 @@
             margin-bottom: 12px;
         }
 
+        .game-logo {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 22px;
+            margin: 10px auto 18px;
+            display: block;
+        }
+
         .game-icon {
             font-size: 55px;
             margin-bottom: 15px;
@@ -222,10 +233,31 @@
         footer span {
             color: #36e58a;
         }
+
+        @media (max-width: 480px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav {
+                justify-content: center;
+            }
+
+            section {
+                padding: 45px 5%;
+            }
+
+            .game-card {
+                padding: 22px;
+            }
+        }
     </style>
 </head>
 
 <body>
+
+    <!-- HEADER -->
 
     <header>
         <div class="logo">AFNAN YAZ™ PRODUCTIONS</div>
@@ -237,9 +269,13 @@
         </nav>
     </header>
 
+
     <main>
 
+        <!-- HERO SECTION -->
+
         <section class="hero" id="home">
+
             <h1>
                 THE AFNAN YAZ<br>
                 <span>PRODUCTIONS</span>
@@ -254,45 +290,55 @@
             <a class="main-button" href="#games">
                 EXPLORE GAMES
             </a>
+
         </section>
+
+
+        <!-- GAMES SECTION -->
 
         <section id="games">
 
             <h2 class="section-title">Our Games</h2>
 
             <p class="section-description">
-                Explore our games and download your favourite.
+                Discover our games and download your favourites.
             </p>
 
             <div class="games-grid">
 
-                <!-- MAIN GAME: CLASSIC BMX BOY -->
+
+                <!-- MAIN GAME: BMX BOY -->
 
                 <div class="game-card featured">
-                    <span class="tag">FEATURED • CLASSIC</span>
 
-                    <div class="game-icon">🚴</div>
+                    <span class="tag">CLASSIC • FEATURED</span>
 
-                    <h3>BMX Boy — Classic Nostalgic Edition</h3>
+                    <img
+                        src="bmx-boy-logo.jpg"
+                        alt="BMX Boy original game logo"
+                        class="game-logo">
+
+                    <h3>BMX Boy</h3>
 
                     <p>
-                        Relive the nostalgia of the classic BMX Boy.
-                        Download the main edition of our BMX Boy
-                        collection here.
+                        Relive the nostalgia of the original BMX Boy.
+                        Get ready for classic bike-riding fun.
                     </p>
 
                     <a
                         class="download"
                         href="BMXBoy_1.16.46_arm64.apk"
                         download>
-                        ⬇ DOWNLOAD CLASSIC BMX BOY
+                        ⬇ DOWNLOAD BMX BOY
                     </a>
+
                 </div>
 
 
                 <!-- T-REX JUNGLE RUN -->
 
                 <div class="game-card">
+
                     <div class="game-icon">🦖</div>
 
                     <h3>T-Rex Jungle Run</h3>
@@ -308,12 +354,14 @@
                         download>
                         ⬇ DOWNLOAD GAME
                     </a>
+
                 </div>
 
 
                 <!-- HIGHWAY RUSH 2D -->
 
                 <div class="game-card">
+
                     <div class="game-icon">🏎️</div>
 
                     <h3>Highway Rush 2D</h3>
@@ -329,36 +377,42 @@
                         download>
                         ⬇ DOWNLOAD GAME
                     </a>
+
                 </div>
 
 
                 <!-- PREVIOUS BMX BOY APK -->
 
                 <div class="game-card">
+
                     <div class="game-icon">📦</div>
 
-                    <h3>BMX Boy — Previous APK</h3>
+                    <h3>BMX Boy — Previous Version</h3>
 
                     <p>
-                        This is the previously uploaded BMX Boy APK.
-                        Keep it available as an alternative version.
+                        Find the previously uploaded BMX Boy APK
+                        here as an alternative download.
                     </p>
 
                     <a
                         class="download"
-                        href="bmx_boy_3d%20%281%29.apk"
+                        href="bmx_boy_3%20%281%29.apk"
                         download>
-                        ⬇ DOWNLOAD PREVIOUS APK
+                        ⬇ DOWNLOAD PREVIOUS VERSION
                     </a>
+
                 </div>
 
+
             </div>
+
         </section>
 
 
-        <!-- ABOUT -->
+        <!-- ABOUT SECTION -->
 
         <section class="about" id="about">
+
             <h2 class="section-title">About Us</h2>
 
             <p>
@@ -367,17 +421,23 @@
                 projects. Explore our collection and check back
                 for future updates.
             </p>
+
         </section>
 
     </main>
 
+
+    <!-- FOOTER -->
+
     <footer>
+
         <p>
             © 2026 <span>The Afnan Yaz Productions</span>.
             All rights reserved.
         </p>
 
         <p>Official Game Website</p>
+
     </footer>
 
 </body>
