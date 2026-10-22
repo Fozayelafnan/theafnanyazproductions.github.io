@@ -4,10 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <meta name="google-site-verification" content="ZeACEChF22ZR6L-upr85EX3WahBWdhCHl7Y7Pz_6yfo">
-
-    <meta name="description" content="Download Android games from The Afnan Yaz Productions official game website.">
+    <meta name="description" content="Visit The Afnan Yaz Productions official game website and discover BMX Boy Classic, T-Rex Jungle Run and Highway Rush 2D.">
     <meta name="theme-color" content="#080d14">
 
     <title>The Afnan Yaz Productions | Official Game Studio</title>
@@ -43,7 +41,7 @@
 
         .logo {
             color: #36e58a;
-            font-size: 21px;
+            font-size: 20px;
             font-weight: bold;
         }
 
@@ -71,13 +69,12 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background:
-                radial-gradient(
-                    circle at top,
-                    #173b32 0%,
-                    #101c25 40%,
-                    #080d14 80%
-                );
+            background: radial-gradient(
+                circle at top,
+                #173b32,
+                #101c25 45%,
+                #080d14 85%
+            );
         }
 
         .hero h1 {
@@ -147,6 +144,26 @@
         .game-card:hover {
             transform: translateY(-5px);
             border-color: #36e58a;
+        }
+
+        .featured {
+            border-color: #36e58a;
+            background: linear-gradient(
+                160deg,
+                #13271f,
+                #101923 70%
+            );
+        }
+
+        .tag {
+            display: inline-block;
+            background: #36e58a;
+            color: #07130d;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 20px;
+            margin-bottom: 12px;
         }
 
         .game-icon {
@@ -230,8 +247,8 @@
 
             <p>
                 Welcome to our official game website.
-                Discover our games and download your favourites
-                directly to your Android device.
+                Discover classic games, nostalgic adventures
+                and our Android game downloads.
             </p>
 
             <a class="main-button" href="#games">
@@ -240,15 +257,40 @@
         </section>
 
         <section id="games">
+
             <h2 class="section-title">Our Games</h2>
 
             <p class="section-description">
-                Choose a game below and download its APK.
+                Explore our games and download your favourite.
             </p>
 
             <div class="games-grid">
 
-                <!-- GAME 1: T-REX JUNGLE RUN -->
+                <!-- MAIN GAME: CLASSIC BMX BOY -->
+
+                <div class="game-card featured">
+                    <span class="tag">FEATURED • CLASSIC</span>
+
+                    <div class="game-icon">🚴</div>
+
+                    <h3>BMX Boy — Classic Nostalgic Edition</h3>
+
+                    <p>
+                        Relive the nostalgia of the classic BMX Boy.
+                        Download the main edition of our BMX Boy
+                        collection here.
+                    </p>
+
+                    <a
+                        class="download"
+                        href="BMXBoy_1.16.46_arm64.apk"
+                        download>
+                        ⬇ DOWNLOAD CLASSIC BMX BOY
+                    </a>
+                </div>
+
+
+                <!-- T-REX JUNGLE RUN -->
 
                 <div class="game-card">
                     <div class="game-icon">🦖</div>
@@ -269,7 +311,7 @@
                 </div>
 
 
-                <!-- GAME 2: HIGHWAY RUSH 2D -->
+                <!-- HIGHWAY RUSH 2D -->
 
                 <div class="game-card">
                     <div class="game-icon">🏎️</div>
@@ -290,44 +332,23 @@
                 </div>
 
 
-                <!-- GAME 3: ORIGINAL BMX BOY 3D -->
+                <!-- PREVIOUS BMX BOY APK -->
 
                 <div class="game-card">
-                    <div class="game-icon">🚴</div>
+                    <div class="game-icon">📦</div>
 
-                    <h3>BMX Boy 3D</h3>
+                    <h3>BMX Boy — Previous APK</h3>
 
                     <p>
-                        Download the original BMX Boy APK
-                        and enjoy the classic bike game.
+                        This is the previously uploaded BMX Boy APK.
+                        Keep it available as an alternative version.
                     </p>
 
                     <a
                         class="download"
-                        href="bmx_boy_3%20%281%29.apk"
+                        href="bmx_boy_3d%20%281%29.apk"
                         download>
-                        ⬇ DOWNLOAD ORIGINAL
-                    </a>
-                </div>
-
-
-                <!-- GAME 4: UPDATED BMX BOY -->
-
-                <div class="game-card">
-                    <div class="game-icon">🚵</div>
-
-                    <h3>BMX Boy 3D - Updated Version</h3>
-
-                    <p>
-                        Try the updated BMX Boy APK version.
-                        Compatibility depends on your Android device.
-                    </p>
-
-                    <a
-                        class="download"
-                        href="BMXBoy_1.16.46_arm64.apk"
-                        download>
-                        ⬇ DOWNLOAD UPDATED VERSION
+                        ⬇ DOWNLOAD PREVIOUS APK
                     </a>
                 </div>
 
@@ -335,23 +356,20 @@
         </section>
 
 
-        <!-- ABOUT SECTION -->
+        <!-- ABOUT -->
 
         <section class="about" id="about">
             <h2 class="section-title">About Us</h2>
 
             <p>
                 The Afnan Yaz Productions is an independent
-                game studio website dedicated to sharing games
-                and gaming projects. Visit our website to discover
-                available downloads and updates.
+                game website sharing Android games and gaming
+                projects. Explore our collection and check back
+                for future updates.
             </p>
         </section>
 
     </main>
-
-
-    <!-- FOOTER -->
 
     <footer>
         <p>
