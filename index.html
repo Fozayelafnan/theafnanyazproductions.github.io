@@ -1,153 +1,216 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#080d14">
-<meta name="description" content="Download Android games from The Afnan Yaz Productions.">
-<meta name="google-site-verification" content="ZeACEChF22ZR6L-upr85EX3WahBWdhCHl7Y7Pz_6yfo">
-<title>The Afnan Yaz Productions | Official Game Studio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="ZeACEChF22ZR6L-upr85EX3WahBWdhCHl7Y7Pz_6yfo">
+  <title>The Afnan Yaz Productions | Official Game Studio</title>
+  <meta name="description" content="Download games from The Afnan Yaz Productions official game website.">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Arial,sans-serif;background:#080d14;color:#f5f7fa;line-height:1.6}
-header{padding:18px 5%;background:#0d1520;border-bottom:1px solid #24303c;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
-.brand{font-size:17px;font-weight:800;color:#36e58a}
-nav{display:flex;gap:16px;flex-wrap:wrap}
-nav a{color:#f5f7fa;text-decoration:none}
-nav a:hover{color:#36e58a}
-.hero{text-align:center;padding:75px 6%;background:radial-gradient(ellipse at top,#15372c,#101923 60%,#080d14)}
-.hero h1{font-size:clamp(30px,6vw,52px);line-height:1.25;margin-bottom:18px}
-.green{color:#36e58a}
-.hero p,.section-description{color:#aab6c5;max-width:650px;margin:0 auto 25px;font-size:17px}
-.button{display:inline-block;background:#36e58a;color:#07130d;padding:14px 20px;border-radius:9px;text-decoration:none;font-weight:800}
-#games{padding:60px 5%}
-.section-title{text-align:center;font-size:34px;margin-bottom:12px}
-.section-description{text-align:center;margin-bottom:38px}
-.games-grid{max-width:1150px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:24px}
-.game-card{min-width:0;background:#101923;border:1px solid #233140;border-radius:18px;padding:26px 22px;text-align:center;display:flex;flex-direction:column;align-items:center}
-.game-card.featured{background:linear-gradient(155deg,#132a21,#101923 75%);border-color:#4aab7d}
-.tag{display:inline-block;background:#36e58a;color:#07130d;font-size:12px;font-weight:bold;padding:6px 13px;border-radius:20px;margin-bottom:12px}
-.game-icon,.game-logo{width:150px;height:150px;margin:10px auto 20px}
-.game-icon{display:flex;justify-content:center;align-items:center;font-size:78px}
-.game-logo{display:block;object-fit:contain;border-radius:12px}
-.game-card h3{font-size:23px;line-height:1.35;margin-bottom:14px}
-.game-card p{color:#aab6c5;font-size:15px;margin-bottom:24px;flex-grow:1}
-.download{display:block;width:100%;margin-top:auto;background:#36e58a;color:#07130d;text-decoration:none;padding:15px 10px;border-radius:9px;font-weight:800;font-size:14px;overflow-wrap:anywhere}
-.download:hover{background:#24cd76}
-.about{padding:65px 7%;background:#0d1520;text-align:center}
-.about p{max-width:760px;margin:auto;color:#b6c0ce;font-size:17px}
-footer{text-align:center;padding:25px 6%;color:#8f9baa;border-top:1px solid #202c39;font-size:14px}
-footer span{color:#36e58a}
-@media(max-width:480px){
-header{justify-content:center;text-align:center}
-nav{justify-content:center}
-#games{padding:45px 5%}
-.game-card{padding:24px 18px}
-}
-</style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b0f14;
+      color: #ffffff;
+    }
+
+    header {
+      text-align: center;
+      padding: 35px 15px;
+      background: linear-gradient(135deg, #111827, #172554);
+      border-bottom: 2px solid #2563eb;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: clamp(25px, 5vw, 38px);
+    }
+
+    header p {
+      color: #cbd5e1;
+      margin-bottom: 0;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 25px 15px;
+    }
+
+    .section-title {
+      margin-bottom: 20px;
+      font-size: 25px;
+    }
+
+    .games {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .game {
+      background: #151b23;
+      border: 1px solid #293341;
+      border-radius: 15px;
+      padding: 18px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .game:hover {
+      transform: translateY(-4px);
+      border-color: #3b82f6;
+    }
+
+    .game-logo {
+      width: 125px;
+      height: 125px;
+      object-fit: contain;
+      border-radius: 12px;
+      margin-bottom: 12px;
+    }
+
+    .game-icon {
+      width: 125px;
+      height: 125px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 70px;
+      margin-bottom: 12px;
+    }
+
+    .game h3 {
+      margin: 8px 0;
+      font-size: 20px;
+    }
+
+    .game p {
+      color: #b8c2cf;
+      font-size: 14px;
+      line-height: 1.5;
+      flex-grow: 1;
+    }
+
+    .download {
+      display: block;
+      width: 100%;
+      margin-top: 12px;
+      padding: 12px 10px;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 9px;
+    }
+
+    .download:hover {
+      background: #1d4ed8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 25px;
+      color: #94a3b8;
+      background: #10151c;
+      font-size: 13px;
+    }
+  </style>
 </head>
 
 <body>
-<header>
-  <div class="brand">AFNAN YAZ™ PRODUCTIONS</div>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#games">Our Games</a>
-    <a href="#about">About Us</a>
-  </nav>
-</header>
+  <header>
+    <h1>The Afnan Yaz Productions</h1>
+    <p>OFFICIAL GAME WEBSITE</p>
+  </header>
 
-<main>
-<section class="hero" id="home">
-  <h1>THE AFNAN YAZ<br><span class="green">PRODUCTIONS</span></h1>
-  <p>Welcome to our official game website. Discover Android games and revisit nostalgic classics.</p>
-  <a class="button" href="#games">EXPLORE OUR GAMES</a>
-</section>
+  <main class="container">
+    <h2 class="section-title">🎮 Our Games</h2>
 
-<section id="games">
-  <h2 class="section-title">Our Games</h2>
-  <p class="section-description">Explore our games and download your favourites.</p>
+    <div class="games">
 
-  <div class="games-grid">
+      <!-- Original BMX Boy: original card and emoji preserved -->
+      <article class="game">
+        <div class="game-icon">🚴</div>
+        <h3>BMX Boy</h3>
+        <p>Play the original BMX Boy game.</p>
+        <a class="download"
+           href="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/BMXBoy_1.16.46_arm64.apk">
+          Download APK
+        </a>
+      </article>
 
-    <!-- ORIGINAL BMX BOY: kept separate -->
-    <article class="game-card featured">
-      <span class="tag">CLASSIC • FEATURED</span>
-      <div class="game-icon" role="img" aria-label="Cyclist">🚴</div>
-      <h3>BMX Boy</h3>
-      <p>Relive the nostalgia of the original BMX Boy. Get ready for classic bike-riding fun.</p>
-      <a class="download" href="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/BMXBoy_1.16.46_arm64.apk">
-        ↓ DOWNLOAD BMX BOY
-      </a>
-    </article>
+      <!-- T-Rex Jungle Run -->
+      <article class="game">
+        <div class="game-icon">🦖</div>
+        <h3>T-Rex Jungle Run</h3>
+        <p>Run, jump and avoid obstacles.</p>
+        <a class="download"
+           href="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/app-debug%20%283%29.apk">
+          Download APK
+        </a>
+      </article>
 
-    <!-- T-REX JUNGLE RUN -->
-    <article class="game-card">
-      <div class="game-icon" role="img" aria-label="Dinosaur">🦖</div>
-      <h3>T-Rex Jungle Run</h3>
-      <p>Run through the jungle and avoid obstacles in this endless runner.</p>
-      <a class="download" href="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/app-debug%20%283%29.apk">
-        ↓ DOWNLOAD T-REX JUNGLE RUN
-      </a>
-    </article>
+      <!-- Highway Rush 2D -->
+      <article class="game">
+        <div class="game-icon">🏎️</div>
+        <h3>Highway Rush 2D</h3>
+        <p>Race through the highway and avoid traffic.</p>
+        <a class="download"
+           href="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/Highway-Rush-2D.apk">
+          Download APK
+        </a>
+      </article>
 
-    <!-- HIGHWAY RUSH 2D -->
-    <article class="game-card">
-      <div class="game-icon" role="img" aria-label="Racing car">🏎️</div>
-      <h3>Highway Rush 2D</h3>
-      <p>Drive on the highway, avoid traffic and enjoy the racing action.</p>
-      <a class="download" href="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/Highway-Rush-2D.apk">
-        ↓ DOWNLOAD HIGHWAY RUSH 2D
-      </a>
-    </article>
+      <!-- BMX Boy 3D: separate red bicycle logo -->
+      <article class="game">
+        <img class="game-logo"
+             src="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/bmx-boy-3d-logo.png"
+             alt="BMX Boy 3D logo">
+        <h3>BMX Boy 3D</h3>
+        <p>Experience BMX riding in 3D.</p>
+        <a class="download"
+           href="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/bmx_boy_3d.apk">
+          Download APK
+        </a>
+      </article>
 
-    <!-- BMX BOY 3D: uses your uploaded red bicycle logo -->
-    <article class="game-card">
-      <img class="game-logo"
-           src="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/bmx-boy-3d-logo.png"
-           alt="BMX Boy 3D bicycle logo">
-      <h3>BMX Boy 3D</h3>
-      <p>Explore BMX Boy 3D. This is a separate game from the original BMX Boy.</p>
-      <a class="download" href="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/bmx_boy_3d.apk">
-        ↓ DOWNLOAD BMX BOY 3D
-      </a>
-    </article>
+      <!-- Spider-Man -->
+      <article class="game">
+        <div class="game-icon">🕷️</div>
+        <h3>Spider-Man Ultimate Power</h3>
+        <p>Download the Spider-Man game APK.</p>
+        <a class="download"
+           href="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/Spider-Man-UltimatePower-ARM64.apk">
+          Download APK
+        </a>
+      </article>
 
-    <!-- SPIDER-MAN -->
-    <article class="game-card">
-      <div class="game-icon" role="img" aria-label="Spider web">🕸️</div>
-      <h3>Spider-Man Ultimate Power</h3>
-      <p>Download Spider-Man Ultimate Power for Android.</p>
-      <a class="download" href="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/Spider-Man_Ultimate_Power_4.1.2_arm64_fixed_v2.apk">
-        ↓ DOWNLOAD SPIDER-MAN
-      </a>
-    </article>
+      <!-- Skater Boy -->
+      <article class="game">
+        <div class="game-icon">🛹</div>
+        <h3>Skater Boy</h3>
+        <p>Skate through levels and avoid obstacles.</p>
+        <a class="download"
+           href="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/skater-boy-1-18-50-arm64-fixed.apk">
+          Download APK
+        </a>
+      </article>
 
-    <!-- SKATER BOY -->
-    <article class="game-card">
-      <div class="game-icon" role="img" aria-label="Skateboard">🛹</div>
-      <h3>Skater Boy</h3>
-      <p>Get on your skateboard and enjoy this classic skating game.</p>
-      <a class="download" href="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/skater-boy-1-18-50-arm64-fixed.apk">
-        ↓ DOWNLOAD SKATER BOY
-      </a>
-    </article>
+    </div>
+  </main>
 
-  </div>
-</section>
-
-<section class="about" id="about">
-  <h2 class="section-title">About Us</h2>
-  <p>The Afnan Yaz Productions is an independent game website sharing Android games and gaming projects. Explore our collection and check back for future updates.</p>
-</section>
-</main>
-
-<footer>
-  <p>© 2026 <span>The Afnan Yaz Productions</span>. All rights reserved.</p>
-  <p>Official Game Website</p>
-</footer>
+  <footer>
+    <p>© 2026 The Afnan Yaz Productions. All rights reserved.</p>
+    <p>Unofficial game downloads are provided for personal use.</p>
+  </footer>
 </body>
 </html>
