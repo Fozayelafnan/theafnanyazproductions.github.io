@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <meta name="google-site-verification" content="ZeACEChF22ZR6L-upr85EX3WahBWdhCHl7Y7Pz_6yfo">
     <meta name="description" content="Download BMX Boy, BMX Boy 3D, T-Rex Jungle Run and Highway Rush 2D from The Afnan Yaz Productions.">
     <meta name="theme-color" content="#080d14">
@@ -40,7 +39,7 @@
             gap: 15px;
         }
 
-        .logo {
+        .site-logo {
             color: #36e58a;
             font-size: 20px;
             font-weight: bold;
@@ -167,14 +166,24 @@
             margin-bottom: 12px;
         }
 
-        /* Original BMX Boy logo for both BMX cards */
+        /* BMX logo: used on both BMX game cards */
         .game-logo {
             width: 150px;
             height: 150px;
             object-fit: contain;
             display: block;
             margin: 10px auto 18px;
-            border-radius: 0;
+        }
+
+        /* Other game icons */
+        .game-icon {
+            width: 150px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 82px;
+            margin: 10px auto 18px;
         }
 
         .game-card h3 {
@@ -253,7 +262,7 @@
 <body>
 
     <header>
-        <div class="logo">AFNAN YAZ™ PRODUCTIONS</div>
+        <div class="site-logo">AFNAN YAZ™ PRODUCTIONS</div>
 
         <nav>
             <a href="#home">Home</a>
@@ -264,6 +273,7 @@
 
     <main>
 
+        <!-- HERO -->
         <section class="hero" id="home">
             <h1>
                 THE AFNAN YAZ<br>
@@ -281,22 +291,22 @@
             </a>
         </section>
 
+        <!-- GAMES -->
         <section id="games">
             <h2 class="section-title">Our Games</h2>
 
             <p class="section-description">
-                Explore our games and download your favourites.
+                Discover our games and download your favourites.
             </p>
 
             <div class="games-grid">
 
-                <!-- MAIN ORIGINAL BMX BOY -->
-
+                <!-- ORIGINAL BMX BOY -->
                 <div class="game-card featured">
-                    <span class="tag">FEATURED • CLASSIC</span>
+                    <span class="tag">CLASSIC • FEATURED</span>
 
                     <img
-                        src="bmx-boy-logo.jpg"
+                        src="./bmx-boy-logo.jpg"
                         alt="Original BMX Boy logo"
                         class="game-logo">
 
@@ -316,9 +326,8 @@
                 </div>
 
                 <!-- T-REX JUNGLE RUN -->
-
                 <div class="game-card">
-                    <div class="game-logo" style="font-size:90px;">🦖</div>
+                    <div class="game-icon" aria-hidden="true">🦖</div>
 
                     <h3>T-Rex Jungle Run</h3>
 
@@ -336,9 +345,8 @@
                 </div>
 
                 <!-- HIGHWAY RUSH 2D -->
-
                 <div class="game-card">
-                    <div class="game-logo" style="font-size:90px;">🏎️</div>
+                    <div class="game-icon" aria-hidden="true">🏎️</div>
 
                     <h3>Highway Rush 2D</h3>
 
@@ -355,19 +363,18 @@
                     </a>
                 </div>
 
-                <!-- PREVIOUS BMX BOY 3D APK -->
-
+                <!-- YOUR BMX BOY 3D GAME -->
                 <div class="game-card">
                     <img
-                        src="bmx-boy-logo.jpg"
-                        alt="BMX Boy game logo"
+                        src="./bmx-boy-logo.jpg"
+                        alt="BMX Boy 3D game logo"
                         class="game-logo">
 
                     <h3>BMX Boy 3D</h3>
 
                     <p>
-                        Download the previously uploaded BMX Boy 3D APK.
-                        This is a separate download from the classic BMX Boy.
+                        Explore our BMX Boy 3D game.
+                        Download this version separately.
                     </p>
 
                     <a
@@ -381,6 +388,7 @@
             </div>
         </section>
 
+        <!-- ABOUT -->
         <section class="about" id="about">
             <h2 class="section-title">About Us</h2>
 
@@ -394,6 +402,7 @@
 
     </main>
 
+    <!-- FOOTER -->
     <footer>
         <p>
             © 2026 <span>The Afnan Yaz Productions</span>.
