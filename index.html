@@ -2,415 +2,369 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="ZeACEChF22ZR6L-upr85EX3WahBWdhCHl7Y7Pz_6yfo">
-    <meta name="description" content="Download BMX Boy, BMX Boy 3D, T-Rex Jungle Run and Highway Rush 2D from The Afnan Yaz Productions.">
-    <meta name="theme-color" content="#080d14">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="ZeACEChF22ZR6L-upr85EX3WahBWdhCHl7Y7Pz_6yfo">
+  <meta name="description" content="Download classic BMX Boy, BMX Boy 3D, T-Rex Jungle Run and Highway Rush 2D from The Afnan Yaz Productions.">
+  <meta name="theme-color" content="#080d14">
+  <title>The Afnan Yaz Productions | Official Game Studio</title>
 
-    <title>The Afnan Yaz Productions | Official Game Studio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    html { scroll-behavior: smooth; }
 
-        html {
-            scroll-behavior: smooth;
-        }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #080d14;
+      color: #f5f7fa;
+      line-height: 1.6;
+    }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #080d14;
-            color: #f5f7fa;
-            line-height: 1.6;
-        }
+    header {
+      background: #0d1520;
+      border-bottom: 1px solid #1b2a3a;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
 
-        header {
-            background: #0d1520;
-            border-bottom: 1px solid #1b2a3a;
-            padding: 18px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
+    .site-logo {
+      color: #36e58a;
+      font-size: 19px;
+      font-weight: bold;
+    }
 
-        .site-logo {
-            color: #36e58a;
-            font-size: 20px;
-            font-weight: bold;
-        }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
 
-        nav {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
+    nav a {
+      color: #e5e7eb;
+      text-decoration: none;
+      font-size: 14px;
+    }
 
-        nav a {
-            color: #e5e7eb;
-            text-decoration: none;
-            font-size: 14px;
-        }
+    nav a:hover { color: #36e58a; }
 
-        nav a:hover {
-            color: #36e58a;
-        }
+    .hero {
+      min-height: 390px;
+      padding: 75px 7%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top, #173b32, #101c25 45%, #080d14 85%);
+    }
 
-        .hero {
-            min-height: 390px;
-            padding: 80px 7%;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: radial-gradient(
-                circle at top,
-                #173b32,
-                #101c25 45%,
-                #080d14 85%
-            );
-        }
+    .hero h1 {
+      font-size: clamp(32px, 6vw, 56px);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
 
-        .hero h1 {
-            font-size: clamp(32px, 6vw, 56px);
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
+    .hero h1 span { color: #36e58a; }
 
-        .hero h1 span {
-            color: #36e58a;
-        }
+    .hero p {
+      max-width: 650px;
+      color: #bdc7d3;
+      margin-bottom: 28px;
+    }
 
-        .hero p {
-            max-width: 650px;
-            color: #bdc7d3;
-            margin-bottom: 28px;
-        }
+    .main-button {
+      display: inline-block;
+      background: #36e58a;
+      color: #07130d;
+      padding: 13px 25px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+    }
 
-        .main-button {
-            display: inline-block;
-            background: #36e58a;
-            color: #07130d;
-            padding: 13px 25px;
-            border-radius: 8px;
-            font-weight: bold;
-            text-decoration: none;
-        }
+    section { padding: 65px 7%; }
 
-        section {
-            padding: 65px 7%;
-        }
+    .section-title {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
 
-        .section-title {
-            text-align: center;
-            font-size: 32px;
-            margin-bottom: 12px;
-        }
+    .section-description {
+      text-align: center;
+      color: #9caaba;
+      margin: 0 auto 35px;
+      max-width: 600px;
+    }
 
-        .section-description {
-            text-align: center;
-            color: #9caaba;
-            margin: 0 auto 35px;
-            max-width: 600px;
-        }
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+      gap: 24px;
+    }
 
-        .games-grid {
-            display: grid;
-            grid-template-columns: repeat(
-                auto-fit,
-                minmax(min(100%, 250px), 1fr)
-            );
-            gap: 24px;
-        }
+    .game-card {
+      background: #101923;
+      border: 1px solid #243344;
+      border-radius: 14px;
+      padding: 25px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.2s, border-color 0.2s;
+    }
 
-        .game-card {
-            background: #101923;
-            border: 1px solid #243344;
-            border-radius: 14px;
-            padding: 25px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            transition: transform 0.2s, border-color 0.2s;
-        }
+    .game-card:hover {
+      transform: translateY(-4px);
+      border-color: #36e58a;
+    }
 
-        .game-card:hover {
-            transform: translateY(-5px);
-            border-color: #36e58a;
-        }
+    .featured {
+      border-color: #36e58a;
+      background: linear-gradient(160deg, #13271f, #101923 70%);
+    }
 
-        .featured {
-            border-color: #36e58a;
-            background: linear-gradient(
-                160deg,
-                #13271f,
-                #101923 70%
-            );
-        }
+    .tag {
+      display: inline-block;
+      background: #36e58a;
+      color: #07130d;
+      font-size: 11px;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
 
-        .tag {
-            display: inline-block;
-            background: #36e58a;
-            color: #07130d;
-            font-size: 11px;
-            font-weight: bold;
-            padding: 5px 10px;
-            border-radius: 20px;
-            margin-bottom: 12px;
-        }
+    /* Original BMX Boy logo */
+    .game-logo {
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+      display: block;
+      margin: 10px auto 18px;
+    }
 
-        /* BMX logo: used on both BMX game cards */
-        .game-logo {
-            width: 150px;
-            height: 150px;
-            object-fit: contain;
-            display: block;
-            margin: 10px auto 18px;
-        }
+    /* BMX Boy 3D logo, separate from original BMX Boy */
+    .bmx3d-logo {
+      width: 150px;
+      height: 150px;
+      margin: 10px auto 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #101923;
+      border: 2px solid #36e58a;
+      border-radius: 14px;
+      font-size: 88px;
+      line-height: 1;
+    }
 
-        /* Other game icons */
-        .game-icon {
-            width: 150px;
-            height: 150px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 82px;
-            margin: 10px auto 18px;
-        }
+    .game-icon {
+      width: 150px;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 82px;
+      margin: 10px auto 18px;
+    }
 
-        .game-card h3 {
-            font-size: 21px;
-            margin-bottom: 12px;
-        }
+    .game-card h3 {
+      font-size: 21px;
+      margin-bottom: 12px;
+    }
 
-        .game-card p {
-            color: #aab6c5;
-            font-size: 14px;
-            margin-bottom: 22px;
-            flex-grow: 1;
-        }
+    .game-card p {
+      color: #aab6c5;
+      font-size: 14px;
+      margin-bottom: 22px;
+      flex-grow: 1;
+    }
 
-        .download {
-            display: block;
-            width: 100%;
-            background: #36e58a;
-            color: #07130d;
-            padding: 12px 10px;
-            border-radius: 7px;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: bold;
-            transition: background 0.2s;
-        }
+    .download {
+      display: block;
+      width: 100%;
+      background: #36e58a;
+      color: #07130d;
+      padding: 13px 10px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+    }
 
-        .download:hover {
-            background: #20c975;
-        }
+    .download:hover { background: #20c975; }
 
-        .about {
-            background: #0d1520;
-            text-align: center;
-        }
+    .about {
+      background: #0d1520;
+      text-align: center;
+    }
 
-        .about p {
-            max-width: 750px;
-            margin: 0 auto;
-            color: #bdc7d3;
-        }
+    .about p {
+      max-width: 750px;
+      margin: 0 auto;
+      color: #bdc7d3;
+    }
 
-        footer {
-            padding: 25px 7%;
-            text-align: center;
-            color: #8996a6;
-            font-size: 13px;
-            border-top: 1px solid #1b2a3a;
-        }
+    footer {
+      padding: 25px 7%;
+      text-align: center;
+      color: #8996a6;
+      font-size: 13px;
+      border-top: 1px solid #1b2a3a;
+    }
 
-        footer span {
-            color: #36e58a;
-        }
+    footer span { color: #36e58a; }
 
-        @media (max-width: 480px) {
-            header {
-                justify-content: center;
-                text-align: center;
-            }
+    @media (max-width: 480px) {
+      header {
+        justify-content: center;
+        text-align: center;
+      }
 
-            nav {
-                justify-content: center;
-            }
-
-            section {
-                padding: 45px 5%;
-            }
-
-            .game-card {
-                padding: 22px;
-            }
-        }
-    </style>
+      nav { justify-content: center; }
+      section { padding: 45px 5%; }
+      .game-card { padding: 22px; }
+    }
+  </style>
 </head>
 
 <body>
+  <header>
+    <div class="site-logo">AFNAN YAZ™ PRODUCTIONS</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#games">Games</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
 
-    <header>
-        <div class="site-logo">AFNAN YAZ™ PRODUCTIONS</div>
+  <main>
+    <section class="hero" id="home">
+      <h1>THE AFNAN YAZ<br><span>PRODUCTIONS</span></h1>
+      <p>
+        Welcome to our official game website.
+        Discover nostalgic games and download your favourites for Android.
+      </p>
+      <a class="main-button" href="#games">EXPLORE GAMES</a>
+    </section>
 
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#games">Games</a>
-            <a href="#about">About</a>
-        </nav>
-    </header>
+    <section id="games">
+      <h2 class="section-title">Our Games</h2>
+      <p class="section-description">
+        Explore our games and download your favourite.
+      </p>
 
-    <main>
+      <div class="games-grid">
 
-        <!-- HERO -->
-        <section class="hero" id="home">
-            <h1>
-                THE AFNAN YAZ<br>
-                <span>PRODUCTIONS</span>
-            </h1>
+        <!-- ORIGINAL BMX BOY: KEEP ITS OWN LOGO -->
+        <article class="game-card featured">
+          <span class="tag">FEATURED • CLASSIC</span>
 
-            <p>
-                Welcome to our official game website.
-                Discover nostalgic games and download
-                your favourites for Android.
-            </p>
+          <img
+            src="./bmx-boy-logo.jpg"
+            alt="Original BMX Boy bicycle logo"
+            class="game-logo">
 
-            <a class="main-button" href="#games">
-                EXPLORE GAMES
-            </a>
-        </section>
+          <h3>BMX Boy – Classic Nostalgic Edition</h3>
 
-        <!-- GAMES -->
-        <section id="games">
-            <h2 class="section-title">Our Games</h2>
+          <p>
+            Relive the nostalgia of the classic BMX Boy.
+            Download the main edition of our BMX Boy collection here.
+          </p>
 
-            <p class="section-description">
-                Discover our games and download your favourites.
-            </p>
+          <a class="download"
+             href="BMXBoy_1.16.46_arm64.apk"
+             download>
+            ↓ DOWNLOAD CLASSIC BMX BOY
+          </a>
+        </article>
 
-            <div class="games-grid">
+        <!-- T-REX JUNGLE RUN -->
+        <article class="game-card">
+          <div class="game-icon" aria-hidden="true">🦖</div>
 
-                <!-- ORIGINAL BMX BOY -->
-                <div class="game-card featured">
-                    <span class="tag">CLASSIC • FEATURED</span>
+          <h3>T-Rex Jungle Run</h3>
 
-                    <img
-                        src="./bmx-boy-logo.jpg"
-                        alt="Original BMX Boy logo"
-                        class="game-logo">
+          <p>
+            Run through the jungle, avoid obstacles
+            and challenge yourself in this endless runner.
+          </p>
 
-                    <h3>BMX Boy</h3>
+          <a class="download"
+             href="app-debug%20%283%29.apk"
+             download>
+            ↓ DOWNLOAD GAME
+          </a>
+        </article>
 
-                    <p>
-                        Relive the nostalgia of the original BMX Boy.
-                        Enjoy the classic bike-riding adventure.
-                    </p>
+        <!-- HIGHWAY RUSH 2D -->
+        <article class="game-card">
+          <div class="game-icon" aria-hidden="true">🏎️</div>
 
-                    <a
-                        class="download"
-                        href="BMXBoy_1.16.46_arm64.apk"
-                        download>
-                        ⬇ DOWNLOAD BMX BOY
-                    </a>
-                </div>
+          <h3>Highway Rush 2D</h3>
 
-                <!-- T-REX JUNGLE RUN -->
-                <div class="game-card">
-                    <div class="game-icon" aria-hidden="true">🦖</div>
+          <p>
+            Drive on the highway, avoid traffic
+            and enjoy the racing action.
+          </p>
 
-                    <h3>T-Rex Jungle Run</h3>
+          <a class="download"
+             href="Highway-Rush-2D.apk"
+             download>
+            ↓ DOWNLOAD GAME
+          </a>
+        </article>
 
-                    <p>
-                        Run through the jungle, avoid obstacles
-                        and challenge yourself in this endless runner.
-                    </p>
+        <!-- BMX BOY 3D: ITS OWN CYCLIST LOGO -->
+        <article class="game-card">
+          <div class="bmx3d-logo" role="img" aria-label="BMX Boy 3D cyclist logo">
+            🚴
+          </div>
 
-                    <a
-                        class="download"
-                        href="app-debug%20%283%29.apk"
-                        download>
-                        ⬇ DOWNLOAD GAME
-                    </a>
-                </div>
+          <h3>BMX Boy 3D</h3>
 
-                <!-- HIGHWAY RUSH 2D -->
-                <div class="game-card">
-                    <div class="game-icon" aria-hidden="true">🏎️</div>
+          <p>
+            Download the BMX Boy 3D game separately
+            from the original classic BMX Boy.
+          </p>
 
-                    <h3>Highway Rush 2D</h3>
+          <a class="download"
+             href="bmx_boy_3%20%281%29.apk"
+             download>
+            ↓ DOWNLOAD BMX BOY 3D
+          </a>
+        </article>
 
-                    <p>
-                        Drive on the highway, avoid traffic
-                        and enjoy the racing action.
-                    </p>
+      </div>
+    </section>
 
-                    <a
-                        class="download"
-                        href="Highway-Rush-2D.apk"
-                        download>
-                        ⬇ DOWNLOAD GAME
-                    </a>
-                </div>
+    <section class="about" id="about">
+      <h2 class="section-title">About Us</h2>
+      <p>
+        The Afnan Yaz Productions is an independent game website
+        sharing Android games and gaming projects. Explore our
+        collection and check back for future updates.
+      </p>
+    </section>
+  </main>
 
-                <!-- YOUR BMX BOY 3D GAME -->
-                <div class="game-card">
-                    <img
-                        src="./bmx-boy-logo.jpg"
-                        alt="BMX Boy 3D game logo"
-                        class="game-logo">
-
-                    <h3>BMX Boy 3D</h3>
-
-                    <p>
-                        Explore our BMX Boy 3D game.
-                        Download this version separately.
-                    </p>
-
-                    <a
-                        class="download"
-                        href="bmx_boy_3%20%281%29.apk"
-                        download>
-                        ⬇ DOWNLOAD BMX BOY 3D
-                    </a>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ABOUT -->
-        <section class="about" id="about">
-            <h2 class="section-title">About Us</h2>
-
-            <p>
-                The Afnan Yaz Productions is an independent
-                game website sharing Android games and gaming
-                projects. Explore our collection and check back
-                for future updates.
-            </p>
-        </section>
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer>
-        <p>
-            © 2026 <span>The Afnan Yaz Productions</span>.
-            All rights reserved.
-        </p>
-
-        <p>Official Game Website</p>
-    </footer>
-
+  <footer>
+    <p>
+      © 2026 <span>The Afnan Yaz Productions</span>.
+      All rights reserved.
+    </p>
+    <p>Official Game Website</p>
+  </footer>
 </body>
 </html>
