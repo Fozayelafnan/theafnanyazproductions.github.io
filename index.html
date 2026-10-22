@@ -5,15 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#080d14">
-  <meta name="description" content="Download Android games from The Afnan Yaz Productions official game website.">
+  <meta name="description" content="Download Android games from The Afnan Yaz Productions.">
   <meta name="google-site-verification" content="ZeACEChF22ZR6L-upr85EX3WahBWdhCHl7Y7Pz_6yfo">
+
   <title>The Afnan Yaz Productions | Official Game Studio</title>
 
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html { scroll-behavior: smooth; }
@@ -32,14 +33,14 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 15px;
       flex-wrap: wrap;
+      gap: 15px;
     }
 
     .brand {
       color: #36e58a;
-      font-weight: 800;
       font-size: 18px;
+      font-weight: 800;
     }
 
     nav {
@@ -49,8 +50,8 @@
     }
 
     nav a {
-      text-decoration: none;
       color: #e5e7eb;
+      text-decoration: none;
       font-size: 14px;
     }
 
@@ -58,7 +59,7 @@
 
     .hero {
       text-align: center;
-      padding: 80px 6%;
+      padding: 75px 6%;
       background: radial-gradient(ellipse at top, #15372c, #101923 55%, #080d14);
     }
 
@@ -87,12 +88,12 @@
       font-weight: bold;
     }
 
-    #games { padding: 65px 5%; }
+    #games { padding: 60px 5%; }
 
     .section-title {
       text-align: center;
       font-size: 34px;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
     }
 
     .section-description {
@@ -115,7 +116,7 @@
       background: #101923;
       border: 1px solid #233140;
       border-radius: 18px;
-      padding: 28px 24px;
+      padding: 26px 22px;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -143,35 +144,36 @@
       margin-bottom: 12px;
     }
 
-    .game-icon {
-      height: 150px;
+    .game-icon,
+    .game-logo {
       width: 150px;
+      height: 150px;
+      margin: 10px auto 20px;
+    }
+
+    .game-icon {
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 78px;
-      margin: 10px auto 20px;
     }
 
     .game-logo {
-      width: 150px;
-      height: 150px;
-      object-fit: contain;
       display: block;
-      margin: 10px auto 20px;
+      object-fit: contain;
       border-radius: 12px;
     }
 
     .game-card h3 {
       font-size: 23px;
       line-height: 1.35;
-      margin-bottom: 15px;
+      margin-bottom: 14px;
     }
 
     .game-card p {
       color: #aab6c5;
       font-size: 15px;
-      margin-bottom: 25px;
+      margin-bottom: 24px;
       flex-grow: 1;
     }
 
@@ -221,178 +223,168 @@
       }
 
       nav { justify-content: center; }
-
       #games { padding: 45px 5%; }
-
-      .game-card { padding: 25px 20px; }
+      .game-card { padding: 24px 18px; }
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <div class="brand">AFNAN YAZ™ PRODUCTIONS</div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#games">Our Games</a>
-      <a href="#about">About Us</a>
-    </nav>
-  </header>
+<header>
+  <div class="brand">AFNAN YAZ™ PRODUCTIONS</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#games">Our Games</a>
+    <a href="#about">About Us</a>
+  </nav>
+</header>
 
-  <main>
-    <section class="hero" id="home">
-      <h1>THE AFNAN YAZ<br><span>PRODUCTIONS</span></h1>
-      <p>
-        Welcome to our official game website.
-        Discover Android games, revisit nostalgic classics,
-        and explore our gaming collection.
-      </p>
-      <a class="hero-button" href="#games">EXPLORE OUR GAMES</a>
-    </section>
+<main>
 
-    <section id="games">
-      <h2 class="section-title">Our Games</h2>
-      <p class="section-description">
-        Explore our games and download your favourites.
-      </p>
+  <section class="hero" id="home">
+    <h1>THE AFNAN YAZ<br><span>PRODUCTIONS</span></h1>
+    <p>
+      Welcome to our official game website.
+      Discover Android games, revisit nostalgic classics,
+      and explore our gaming collection.
+    </p>
+    <a class="hero-button" href="#games">EXPLORE OUR GAMES</a>
+  </section>
 
-      <div class="games-grid">
+  <section id="games">
+    <h2 class="section-title">Our Games</h2>
+    <p class="section-description">
+      Explore our games and download your favourites.
+    </p>
 
-        <!-- ORIGINAL BMX BOY: KEEP THIS CARD SEPARATE -->
-        <article class="game-card featured">
-          <span class="tag">CLASSIC • FEATURED</span>
+    <div class="games-grid">
 
-          <div class="game-icon" role="img" aria-label="Cyclist">
-            🚴
-          </div>
+      <!-- ORIGINAL BMX BOY -->
+      <article class="game-card featured">
+        <span class="tag">CLASSIC • FEATURED</span>
 
-          <h3>BMX Boy</h3>
-          <p>
-            Relive the nostalgia of the original BMX Boy.
-            Get ready for classic bike-riding fun.
-          </p>
+        <div class="game-icon" role="img" aria-label="BMX cyclist">🚴</div>
 
-          <a class="download"
-             href="BMXBoy_1.16.46_arm64.apk"
-             download>
-            ↓ DOWNLOAD BMX BOY
-          </a>
-        </article>
+        <h3>BMX Boy</h3>
+        <p>
+          Relive the nostalgia of the original BMX Boy.
+          Get ready for classic bike-riding fun.
+        </p>
 
-        <!-- T-REX JUNGLE RUN -->
-        <article class="game-card">
-          <div class="game-icon" role="img" aria-label="Dinosaur">
-            🦖
-          </div>
+        <a class="download"
+           href="./BMXBoy_1.16.46_arm64.apk"
+           download>
+          ↓ DOWNLOAD BMX BOY
+        </a>
+      </article>
 
-          <h3>T-Rex Jungle Run</h3>
-          <p>
-            Run through the jungle, avoid obstacles
-            and challenge yourself in this endless runner.
-          </p>
+      <!-- T-REX JUNGLE RUN -->
+      <article class="game-card">
+        <div class="game-icon" role="img" aria-label="Dinosaur">🦖</div>
 
-          <a class="download"
-             href="app-debug%20%283%29.apk"
-             download>
-            ↓ DOWNLOAD GAME
-          </a>
-        </article>
+        <h3>T-Rex Jungle Run</h3>
+        <p>
+          Run through the jungle, avoid obstacles,
+          and challenge yourself in this endless runner.
+        </p>
 
-        <!-- HIGHWAY RUSH 2D -->
-        <article class="game-card">
-          <div class="game-icon" role="img" aria-label="Racing car">
-            🏎️
-          </div>
+        <a class="download"
+           href="./app-debug%20%283%29.apk"
+           download>
+          ↓ DOWNLOAD T-REX JUNGLE RUN
+        </a>
+      </article>
 
-          <h3>Highway Rush 2D</h3>
-          <p>
-            Drive on the highway, avoid traffic
-            and enjoy the racing action.
-          </p>
+      <!-- HIGHWAY RUSH 2D -->
+      <article class="game-card">
+        <div class="game-icon" role="img" aria-label="Racing car">🏎️</div>
 
-          <a class="download"
-             href="Highway-Rush-2D.apk"
-             download>
-            ↓ DOWNLOAD GAME
-          </a>
-        </article>
+        <h3>Highway Rush 2D</h3>
+        <p>
+          Drive on the highway, avoid traffic,
+          and enjoy the racing action.
+        </p>
 
-        <!-- BMX BOY 3D: USE YOUR SEPARATE RED BICYCLE LOGO -->
-        <article class="game-card">
-          <img
-            class="game-logo"
-            src="./bmx-boy-3d-logo.png"
-            alt="BMX Boy 3D bicycle logo">
+        <a class="download"
+           href="./Highway-Rush-2D.apk"
+           download>
+          ↓ DOWNLOAD HIGHWAY RUSH 2D
+        </a>
+      </article>
 
-          <h3>BMX Boy 3D</h3>
-          <p>
-            Explore our BMX Boy 3D game.
-            Download this version separately from the classic BMX Boy.
-          </p>
+      <!-- BMX BOY 3D: YOUR RED BICYCLE LOGO -->
+      <article class="game-card">
+        <img
+          class="game-logo"
+          src="./bmx-boy-3d-logo.png"
+          alt="BMX Boy 3D red bicycle logo">
 
-          <a class="download"
-             href="bmx_boy_3%20%281%29.apk"
-             download>
-            ↓ DOWNLOAD BMX BOY 3D
-          </a>
-        </article>
+        <h3>BMX Boy 3D</h3>
+        <p>
+          Explore our BMX Boy 3D game.
+          Download this version separately from the classic BMX Boy.
+        </p>
 
-        <!-- SPIDER-MAN ULTIMATE POWER -->
-        <article class="game-card">
-          <div class="game-icon" role="img" aria-label="Superhero">
-            🕸️
-          </div>
+        <a class="download"
+           href="./bmx_boy_3d.apk"
+           download>
+          ↓ DOWNLOAD BMX BOY 3D
+        </a>
+      </article>
 
-          <h3>Spider-Man Ultimate Power</h3>
-          <p>
-            Download Spider-Man Ultimate Power for Android
-            from our game collection.
-          </p>
+      <!-- SPIDER-MAN ULTIMATE POWER -->
+      <article class="game-card">
+        <div class="game-icon" role="img" aria-label="Spider web">🕸️</div>
 
-          <a class="download"
-             href="Spider-Man_Ultimate_Power_4.1.2_arm64_fixed_v2.apk"
-             download>
-            ↓ DOWNLOAD SPIDER-MAN
-          </a>
-        </article>
+        <h3>Spider-Man Ultimate Power</h3>
+        <p>
+          Download Spider-Man Ultimate Power for Android
+          from our game collection.
+        </p>
 
-        <!-- SKATER BOY -->
-        <article class="game-card">
-          <div class="game-icon" role="img" aria-label="Skateboard">
-            🛹
-          </div>
+        <a class="download"
+           href="./Spider-Man_Ultimate_Power_4.1.2_arm64_fixed_v2.apk"
+           download>
+          ↓ DOWNLOAD SPIDER-MAN
+        </a>
+      </article>
 
-          <h3>Skater Boy</h3>
-          <p>
-            Get on your skateboard and enjoy this classic
-            skateboarding game.
-          </p>
+      <!-- SKATER BOY -->
+      <article class="game-card">
+        <div class="game-icon" role="img" aria-label="Skateboard">🛹</div>
 
-          <a class="download"
-             href="skater-boy-1-18-50-arm64-fixed.apk"
-             download>
-            ↓ DOWNLOAD SKATER BOY
-          </a>
-        </article>
+        <h3>Skater Boy</h3>
+        <p>
+          Get on your skateboard and enjoy this classic
+          skateboarding game.
+        </p>
 
-      </div>
-    </section>
+        <a class="download"
+           href="./skater-boy-1-18-50-arm64-fixed.apk"
+           download>
+          ↓ DOWNLOAD SKATER BOY
+        </a>
+      </article>
 
-    <section class="about" id="about">
-      <h2 class="section-title">About Us</h2>
-      <p>
-        The Afnan Yaz Productions is an independent game website
-        sharing Android games and gaming projects.
-        Explore our collection and check back for future updates.
-      </p>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer>
-    <p>© 2026 <span>The Afnan Yaz Productions</span>. All rights reserved.</p>
-    <p>Official Game Website</p>
-  </footer>
+  <section class="about" id="about">
+    <h2 class="section-title">About Us</h2>
+    <p>
+      The Afnan Yaz Productions is an independent game website
+      sharing Android games and gaming projects.
+      Explore our collection and check back for future updates.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 <span>The Afnan Yaz Productions</span>. All rights reserved.</p>
+  <p>Official Game Website</p>
+</footer>
 
 </body>
 </html>
