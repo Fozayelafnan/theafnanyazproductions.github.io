@@ -2,669 +2,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080b18">
-  <meta name="description" content="Discover and download games from The Afnan Yaz Productions. Explore racing, action, arcade and adventure games.">
-  <meta name="robots" content="index, follow">
-  <title>The Afnan Yaz Productions | Official Game Website</title>
-
-  <style>
-    :root {
-      --bg: #080b18;
-      --panel: #11172b;
-      --panel2: #171e38;
-      --text: #f5f7ff;
-      --muted: #a6b0cc;
-      --cyan: #39e7ff;
-      --purple: #8c5bff;
-      --border: rgba(255,255,255,.1);
-    }
-
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      background:
-        radial-gradient(ellipse at 15% 0%, rgba(85,61,180,.23), transparent 38%),
-        radial-gradient(ellipse at 90% 25%, rgba(0,195,255,.10), transparent 35%),
-        var(--bg);
-      color: var(--text);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-    button, input { font: inherit; }
-
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-      padding: 15px 6%;
-      background: rgba(8,11,24,.88);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(18px);
-    }
-
-    .brand {
-      font-size: 17px;
-      font-weight: 900;
-      letter-spacing: -.5px;
-    }
-
-    .brand span { color: var(--cyan); }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .nav-links a:hover { color: var(--cyan); }
-
-    .hero {
-      max-width: 1100px;
-      margin: auto;
-      padding: 75px 22px 55px;
-      text-align: center;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      padding: 8px 14px;
-      border: 1px solid rgba(57,231,255,.35);
-      border-radius: 30px;
-      color: var(--cyan);
-      background: rgba(57,231,255,.07);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-    }
-
-    h1 {
-      margin: 23px 0 15px;
-      font-size: clamp(35px, 8vw, 67px);
-      line-height: 1.05;
-      letter-spacing: -2px;
-    }
-
-    .gradient {
-      color: transparent;
-      background: linear-gradient(90deg, #40e8ff, #9a76ff, #ff6db8);
-      -webkit-background-clip: text;
-      background-clip: text;
-    }
-
-    .hero p {
-      max-width: 600px;
-      margin: 0 auto;
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 16px;
-    }
-
-    .hero-actions {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 28px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 13px 21px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      font-weight: 800;
-      transition: transform .2s, box-shadow .2s;
-    }
-
-    .btn:hover { transform: translateY(-3px); }
-
-    .btn-primary {
-      color: #07111b;
-      background: linear-gradient(100deg, var(--cyan), #9d8bff);
-      border: 0;
-      box-shadow: 0 8px 28px rgba(57,231,255,.16);
-    }
-
-    .btn-secondary { background: var(--panel); }
-
-    .stats {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 34px;
-    }
-
-    .stat {
-      min-width: 115px;
-      padding: 12px 18px;
-      background: rgba(255,255,255,.035);
-      border: 1px solid var(--border);
-      border-radius: 13px;
-    }
-
-    .stat strong { display: block; font-size: 19px; }
-    .stat small { color: var(--muted); }
-
-    .section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 30px 22px 65px;
-    }
-
-    .section-heading {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 15px;
-      flex-wrap: wrap;
-      margin-bottom: 22px;
-    }
-
-    .section-heading h2 {
-      margin: 0;
-      font-size: clamp(27px, 5vw, 38px);
-      letter-spacing: -1px;
-    }
-
-    .section-heading p {
-      margin: 7px 0 0;
-      color: var(--muted);
-    }
-
-    .search-wrap {
-      margin: 20px 0;
-    }
-
-    .search-box {
-      width: 100%;
-      padding: 16px 18px;
-      color: var(--text);
-      background: var(--panel);
-      border: 1px solid rgba(57,231,255,.23);
-      border-radius: 14px;
-      outline: none;
-      transition: border .2s, box-shadow .2s;
-    }
-
-    .search-box:focus {
-      border-color: var(--cyan);
-      box-shadow: 0 0 0 3px rgba(57,231,255,.09);
-    }
-
-    .filters {
-      display: flex;
-      gap: 9px;
-      flex-wrap: wrap;
-      margin-bottom: 26px;
-    }
-
-    .filter-btn {
-      padding: 10px 16px;
-      border: 1px solid var(--border);
-      border-radius: 30px;
-      color: var(--muted);
-      background: var(--panel);
-      cursor: pointer;
-      transition: .2s;
-    }
-
-    .filter-btn:hover,
-    .filter-btn.active {
-      color: #07111b;
-      background: var(--cyan);
-      border-color: var(--cyan);
-      font-weight: 800;
-    }
-
-    .games-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 19px;
-    }
-
-    .game {
-      min-width: 0;
-      overflow: hidden;
-      background: linear-gradient(150deg, var(--panel2), var(--panel));
-      border: 1px solid var(--border);
-      border-radius: 19px;
-      transition: transform .22s, border-color .22s, box-shadow .22s;
-      animation: appear .45s ease both;
-    }
-
-    .game:hover {
-      transform: translateY(-6px);
-      border-color: rgba(57,231,255,.55);
-      box-shadow: 0 15px 35px rgba(0,0,0,.25);
-    }
-
-    .game-art {
-      display: grid;
-      place-items: center;
-      height: 180px;
-      padding: 15px;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 50% 40%, rgba(57,231,255,.12), transparent 65%),
-        #0c1125;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .game-art img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      transition: transform .25s;
-    }
-
-    .game:hover .game-art img { transform: scale(1.06); }
-
-    .art-placeholder {
-      font-size: 65px;
-      filter: drop-shadow(0 0 18px rgba(57,231,255,.2));
-    }
-
-    .game-info { padding: 17px; }
-
-    .game-info h3 {
-      margin: 0 0 8px;
-      font-size: 17px;
-    }
-
-    .game-info p {
-      min-height: 40px;
-      margin: 0 0 15px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.6;
-    }
-
-    .game-meta {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      margin-bottom: 14px;
-    }
-
-    .tag {
-      display: inline-block;
-      padding: 5px 9px;
-      border-radius: 20px;
-      color: var(--cyan);
-      background: rgba(57,231,255,.09);
-      font-size: 11px;
-      font-weight: 800;
-    }
-
-    .download {
-      display: block;
-      padding: 11px;
-      text-align: center;
-      color: #07111b;
-      background: linear-gradient(100deg, var(--cyan), #a4a0ff);
-      border-radius: 10px;
-      font-size: 13px;
-      font-weight: 900;
-      transition: opacity .2s;
-    }
-
-    .download:hover { opacity: .82; }
-
-    .empty {
-      display: none;
-      padding: 35px 15px;
-      color: var(--muted);
-      text-align: center;
-      border: 1px dashed var(--border);
-      border-radius: 15px;
-    }
-
-    .about-box {
-      padding: 30px;
-      background: linear-gradient(120deg, rgba(140,91,255,.12), rgba(57,231,255,.06));
-      border: 1px solid var(--border);
-      border-radius: 20px;
-    }
-
-    .about-box h2 { margin-top: 0; }
-
-    .about-box p {
-      color: var(--muted);
-      line-height: 1.9;
-    }
-
-    footer {
-      padding: 28px 20px;
-      text-align: center;
-      color: var(--muted);
-      background: rgba(0,0,0,.18);
-      border-top: 1px solid var(--border);
-      font-size: 13px;
-    }
-
-    footer strong { color: var(--text); }
-
-    @keyframes appear {
-      from { opacity: 0; transform: translateY(12px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 950px) {
-      .games-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    }
-
-    @media (max-width: 680px) {
-      .navbar { padding: 13px 17px; }
-      .brand { font-size: 14px; }
-      .nav-links { gap: 12px; font-size: 12px; }
-      .hero { padding-top: 58px; }
-      .games-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-      .game-art { height: 145px; }
-      .game-info { padding: 12px; }
-      .game-info h3 { font-size: 15px; }
-      .game-info p { font-size: 12px; }
-      .section { padding-left: 15px; padding-right: 15px; }
-    }
-
-    @media (max-width: 360px) {
-      .games-grid { grid-template-columns: 1fr; }
-      .game-art { height: 190px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: .01ms !important;
-        transition-duration: .01ms !important;
-        scroll-behavior: auto !important;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080914">
+<meta name="google-site-verification" content="ZeACEChF22ZR6L-upr85EX3WahBWdhCHl7Y7Pz_6yfo">
+<meta name="description" content="Discover games, explore adventures and download games from The Afnan Yaz Productions.">
+<title>AYP Gaming Universe</title>
+<style>
+:root{--bg:#080914;--surface:#111426;--white:#f5f7ff;--muted:#929bb9;--blue:#7777ff;--cyan:#50e9ff;--line:rgba(255,255,255,.09)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{min-height:100vh;background:radial-gradient(ellipse at 10% 0%,#5c3fff22,transparent 35%),radial-gradient(ellipse at 95% 25%,#00d9ff14,transparent 30%),var(--bg);color:var(--white);font-family:Inter,"Segoe UI",Arial,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+.topline{height:3px;background:linear-gradient(90deg,#6c5cff,#48e9ff,#ff62dd,#6c5cff);background-size:250% 100%;animation:rainbow 6s linear infinite}
+@keyframes rainbow{to{background-position:250% 0}}
+.navbar{width:min(1250px,92%);margin:auto;height:76px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:900;font-size:17px;white-space:nowrap}
+.brand-logo{display:grid;place-items:center;width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,#7969ff,#40ddff);color:#080914;font-size:19px}
+.brand span:last-child,.footer-brand span{color:var(--cyan)}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.icon-btn{display:grid;place-items:center;width:43px;height:43px;border:1px solid var(--line);border-radius:14px;background:#ffffff08}
+.menu-link{padding:12px 17px;border-radius:13px;border:1px solid var(--line);color:#c9d0e9;font-size:13px;font-weight:700}
+.hero,.section{width:min(1250px,92%);margin:auto}
+.hero{margin-top:24px}
+.hero-card{min-height:410px;border-radius:30px;border:1px solid #ffffff1f;position:relative;overflow:hidden;display:flex;align-items:center;padding:clamp(28px,6vw,75px);background:radial-gradient(ellipse at 85% 40%,#725eff40,transparent 40%),radial-gradient(ellipse at 75% 90%,#28d9ff20,transparent 35%),linear-gradient(125deg,#17162f,#10162a 52%,#101b31)}
+.hero-card:before{content:"";position:absolute;width:340px;height:340px;right:7%;top:40px;border:1px solid #7b81ff25;border-radius:50%;box-shadow:0 0 0 35px #7b81ff08,0 0 0 75px #7b81ff06}
+.hero-content{max-width:610px;position:relative;z-index:2}
+.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid #7777ff60;background:#7777ff13;color:#c6c7ff;border-radius:40px;padding:8px 13px;font-size:10px;letter-spacing:1.8px;font-weight:900}
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+h1{margin-top:22px;font-size:clamp(40px,7vw,76px);line-height:.99;letter-spacing:-3px;font-weight:950}
+.gradient{background:linear-gradient(95deg,#a49aff,#51e9ff 55%,#ff90e8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:#aeb8d5;line-height:1.8;max-width:490px;margin-top:21px;font-size:14px}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:27px}
+.primary-btn,.secondary-btn{display:inline-flex;justify-content:center;align-items:center;gap:10px;padding:14px 20px;border-radius:13px;font-size:13px;font-weight:850}
+.primary-btn{background:linear-gradient(110deg,#7c6bff,#4c9dff);color:white}
+.secondary-btn{border:1px solid #ffffff20;background:#ffffff08;color:#e0e5f7}
+.floating-symbol{position:absolute;right:14%;top:30%;font-size:clamp(80px,15vw,155px);opacity:.12;transform:rotate(-13deg)}
+.section{padding-top:70px}
+.section-top{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:25px}
+.overline{color:var(--cyan);font-size:10px;letter-spacing:2.4px;font-weight:900}
+.section-top h2{font-size:clamp(27px,4vw,38px);letter-spacing:-1.2px;margin-top:5px}
+.section-top p{margin-top:6px;color:var(--muted);font-size:13px}
+.count{padding:9px 13px;border:1px solid var(--line);border-radius:12px;color:#c6c9e8;background:#ffffff05;font-size:12px;white-space:nowrap}
+.search-wrap{display:flex;align-items:center;gap:12px;padding:7px 10px 7px 17px;min-height:61px;border:1px solid #8b8cff55;border-radius:18px;background:linear-gradient(120deg,#15182c,#101322)}
+.search-symbol{font-size:20px;color:var(--cyan)}
+.search-wrap input{flex:1;min-width:0;outline:none;border:0;background:transparent;color:white;font-size:14px}
+.search-wrap input::placeholder{color:#77819f}
+.search-key{color:#929bb9;font-size:10px;padding:6px 8px;border:1px solid var(--line);border-radius:7px}
+.filters{display:flex;gap:9px;overflow-x:auto;padding:18px 0 7px;scrollbar-width:none}
+.filter{flex-shrink:0;border:1px solid var(--line);border-radius:12px;padding:10px 15px;color:#aab4d1;background:#ffffff05;font-size:12px;font-weight:800;cursor:pointer}
+.filter.active{color:white;background:linear-gradient(110deg,#6d5cff,#557eff);border-color:transparent}
+.games{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:20px}
+.game{min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:21px;background:linear-gradient(145deg,#15192b,#0f1220);transition:.25s;animation:reveal .45s ease both}
+.game:hover{transform:translateY(-6px);border-color:#8184ff80;box-shadow:0 18px 45px #00000030}
+@keyframes reveal{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.game-art{min-height:205px;padding:23px;display:grid;place-items:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 50%,#7777ff1b,transparent 70%),#171a2b}
+.game-art:before{content:"";position:absolute;width:155px;height:155px;border:1px solid #ffffff0b;border-radius:50%;box-shadow:0 0 0 22px #ffffff04,0 0 0 45px #ffffff03}
+.game-art img{position:relative;z-index:1;width:145px;height:145px;object-fit:contain;border-radius:19px;filter:drop-shadow(0 10px 22px #00000035)}
+.art-emoji{position:relative;z-index:1;font-size:83px}
+.game-tag{position:absolute;left:13px;top:13px;z-index:2;padding:6px 9px;border:1px solid #ffffff15;border-radius:8px;background:#080914bb;color:#dbe6ff;font-size:9px;font-weight:900;letter-spacing:1px}
+.game-info{padding:19px}
+.game-info h3{font-size:18px;letter-spacing:-.3px}
+.game-info p{min-height:43px;margin-top:7px;color:var(--muted);font-size:12px;line-height:1.7}
+.game-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:17px}
+.game-type{color:#8f9cbd;font-size:10px;font-weight:800}
+.download-btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 13px;border:1px solid #7777ff45;border-radius:11px;background:#7777ff17;color:#d9dcff;font-size:11px;font-weight:900}
+.download-btn:hover{background:#7065f7;color:white}
+.empty-state{display:none;text-align:center;padding:45px 15px;border:1px dashed #ffffff20;border-radius:18px;color:var(--muted);margin-top:20px}
+.empty-state strong{display:block;color:white;margin-bottom:6px}
+.about{display:grid;grid-template-columns:1.15fr .85fr;gap:25px}
+.about-main,.about-side{border:1px solid var(--line);border-radius:23px;padding:clamp(23px,4vw,37px);background:linear-gradient(145deg,#171a30,#101321)}
+.about-main h2{font-size:clamp(27px,4vw,36px);line-height:1.2;margin:12px 0}
+.about-main p,.about-side p{color:var(--muted);font-size:13px;line-height:1.9}
+.about-side{display:flex;flex-direction:column;justify-content:center;background:radial-gradient(ellipse at 100% 0%,#7777ff25,transparent 55%),#111426}
+.about-mark{font-size:38px;margin-bottom:12px}
+.about-side h3{margin-bottom:8px}
+footer{margin-top:75px;border-top:1px solid var(--line);background:#070811;padding:32px 4%;text-align:center}
+.footer-brand{font-weight:900;font-size:17px}
+footer p{color:#7e89a7;font-size:11px;margin-top:8px}
+.back-top{display:inline-block;margin-top:16px;color:#aeb8d8;font-size:12px}
+@media(max-width:900px){.games{grid-template-columns:repeat(2,minmax(0,1fr))}.about{grid-template-columns:1fr}.hero-card{min-height:380px}.floating-symbol{right:7%;opacity:.08}}
+@media(max-width:560px){.navbar{height:68px}.brand{font-size:13px;gap:8px}.brand-logo{width:37px;height:37px}.menu-link{display:none}.hero{margin-top:12px}.hero-card{min-height:415px;padding:27px 21px;border-radius:23px}.hero h1{letter-spacing:-1.8px}.hero p{font-size:13px}.hero-card:before{right:-140px}.section{padding-top:52px}.games{gap:12px}.game{border-radius:16px}.game-art{min-height:150px;padding:12px}.game-art img{width:100px;height:100px}.art-emoji{font-size:62px}.game-info{padding:13px}.game-info h3{font-size:15px;overflow-wrap:anywhere}.game-info p{font-size:11px;min-height:58px}.game-bottom{align-items:stretch;flex-direction:column}.game-type{text-align:center}.search-key{display:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
 </head>
+<body id="home">
+<div class="topline"></div>
+<nav class="navbar">
+<a class="brand" href="#home"><span class="brand-logo">AYP</span>AFNAN YAZ<span>™</span></a>
+<div class="nav-actions"><a class="icon-btn nav-home" href="#home" aria-label="Home">⌂</a><a class="menu-link" href="#games">EXPLORE GAMES ↗</a></div>
+</nav>
+<header class="hero"><div class="hero-card"><div class="hero-content">
+<span class="pill"><span class="live-dot"></span> YOUR NEXT ADVENTURE STARTS HERE</span>
+<h1>ENTER THE<br><span class="gradient">GAMING UNIVERSE.</span></h1>
+<p>Discover your next favourite game. From thrilling rides to action-packed adventures, explore the Afnan Yaz game collection in one place.</p>
+<div class="hero-buttons"><a class="primary-btn" href="#games">Explore Games ↗</a><a class="secondary-btn" href="#about">Our Universe ✦</a></div>
+</div><div class="floating-symbol" aria-hidden="true">✦</div></div></header>
+<main>
+<section class="section" id="games">
+<div class="section-top"><div><div class="overline">THE DIGITAL PLAYGROUND</div><h2>Find Your Next Game<span class="gradient">.</span></h2><p>Search the collection. Pick your adventure.</p></div><div class="count" id="gameCount">08 GAMES</div></div>
+<label class="search-wrap"><span class="search-symbol">⌕</span><input id="gameSearch" type="search" placeholder="Search games, racing, action..." autocomplete="off" aria-label="Search games"><span class="search-key">SEARCH</span></label>
+<div class="filters" aria-label="Game categories">
+<button class="filter active" data-filter="all" type="button">✦ All Games</button>
+<button class="filter" data-filter="racing" type="button">🏎 Racing</button>
+<button class="filter" data-filter="action" type="button">⚡ Action</button>
+<button class="filter" data-filter="sports" type="button">🚴 Sports</button>
+<button class="filter" data-filter="arcade" type="button">🎮 Arcade</button>
+</div>
+<div class="games" id="gamesGrid">
 
-<body>
-  <header class="navbar">
-    <a class="brand" href="#home">AFNAN YAZ <span>PRODUCTIONS</span></a>
-    <nav class="nav-links" aria-label="Main navigation">
-      <a href="#home">Home</a>
-      <a href="#games">Games</a>
-      <a href="#about">About</a>
-    </nav>
-  </header>
+<article class="game" data-name="bmx boy original bicycle bike cycling sports classic" data-category="sports">
+<div class="game-art"><span class="game-tag">CLASSIC RIDE</span>
+<img src="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/bmx-boy-logo.jpg" alt="Original BMX Boy logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+<span class="art-emoji" style="display:none">🚴</span></div>
+<div class="game-info"><h3>BMX Boy</h3><p>Ride, jump and enjoy the original BMX adventure.</p>
+<div class="game-bottom"><span class="game-type">SPORTS · CLASSIC</span><a class="download-btn" href="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/BMXBoy_1.16.46_arm64.apk">DOWNLOAD ↗</a></div></div>
+</article>
 
-  <main>
-    <section class="hero" id="home">
-      <span class="eyebrow">INDEPENDENT GAME STUDIO</span>
-      <h1>The Afnan Yaz<br><span class="gradient">Productions</span></h1>
-      <p>
-        Discover your next gaming adventure. Explore racing, action, arcade
-        and other games in one place.
-      </p>
+<article class="game" data-name="t rex trex jungle run dinosaur running endless arcade" data-category="arcade">
+<div class="game-art"><span class="game-tag">ARCADE</span><div class="art-emoji">🦖</div></div>
+<div class="game-info"><h3>T-Rex Jungle Run</h3><p>Run, jump and challenge your reflexes.</p>
+<div class="game-bottom"><span class="game-type">ARCADE · RUNNER</span><a class="download-btn" href="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/app-debug%20%283%29.apk">DOWNLOAD ↗</a></div></div>
+</article>
 
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#games">Explore Games ↓</a>
-        <a class="btn btn-secondary" href="#about">About Our Studio</a>
-      </div>
+<article class="game" data-name="highway rush 2d car racing traffic speed driving" data-category="racing">
+<div class="game-art"><span class="game-tag">HIGH SPEED</span><div class="art-emoji">🏎️</div></div>
+<div class="game-info"><h3>Highway Rush 2D</h3><p>Hit the highway and dodge the traffic.</p>
+<div class="game-bottom"><span class="game-type">RACING · DRIVING</span><a class="download-btn" href="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/Highway-Rush-2D.apk">DOWNLOAD ↗</a></div></div>
+</article>
 
-      <div class="stats">
-        <div class="stat"><strong id="gameCount">8</strong><small>Games listed</small></div>
-        <div class="stat"><strong>Mobile</strong><small>Gaming focus</small></div>
-        <div class="stat"><strong>Let's Play</strong><small>Discover more</small></div>
-      </div>
-    </section>
+<article class="game" data-name="bmx boy 3d bicycle bike stunt cycling sports" data-category="sports">
+<div class="game-art"><span class="game-tag">3D EXPERIENCE</span>
+<img src="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/bmx-boy-3d-logo.png" alt="BMX Boy 3D logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+<span class="art-emoji" style="display:none">🚵</span></div>
+<div class="game-info"><h3>BMX Boy 3D</h3><p>Explore the BMX experience in a 3D adventure.</p>
+<div class="game-bottom"><span class="game-type">SPORTS · 3D</span><a class="download-btn" href="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/bmx_boy_3d.apk">DOWNLOAD ↗</a></div></div>
+</article>
 
-    <section class="section" id="games">
-      <div class="section-heading">
-        <div>
-          <h2>Explore <span class="gradient">Games</span></h2>
-          <p>Find a game and open its download link.</p>
-        </div>
-      </div>
+<article class="game" data-name="spider man spiderman ultimate power superhero action" data-category="action">
+<div class="game-art"><span class="game-tag">ACTION</span><div class="art-emoji">🕷️</div></div>
+<div class="game-info"><h3>Spider-Man Ultimate Power</h3><p>Jump into a superhero action adventure.</p>
+<div class="game-bottom"><span class="game-type">ACTION · ADVENTURE</span><a class="download-btn" href="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/Spider-Man-UltimatePower-ARM64.apk">DOWNLOAD ↗</a></div></div>
+</article>
 
-      <div class="search-wrap">
-        <input
-          class="search-box"
-          type="search"
-          id="gameSearch"
-          placeholder="Search games, racing, action..."
-          aria-label="Search games"
-          autocomplete="off"
-        >
-      </div>
+<article class="game" data-name="skater boy skateboard skating sports arcade" data-category="arcade">
+<div class="game-art"><span class="game-tag">SKATE TIME</span><div class="art-emoji">🛹</div></div>
+<div class="game-info"><h3>Skater Boy</h3><p>Skate through levels and overcome obstacles.</p>
+<div class="game-bottom"><span class="game-type">ARCADE · SPORTS</span><a class="download-btn" href="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/skater-boy-1-18-50-arm64-fixed.apk">DOWNLOAD ↗</a></div></div>
+</article>
 
-      <div class="filters" aria-label="Filter games by category">
-        <button class="filter-btn active" data-filter="all" type="button">All Games</button>
-        <button class="filter-btn" data-filter="racing" type="button">Racing</button>
-        <button class="filter-btn" data-filter="action" type="button">Action</button>
-        <button class="filter-btn" data-filter="sports" type="button">Sports</button>
-        <button class="filter-btn" data-filter="arcade" type="button">Arcade</button>
-      </div>
+<!-- Voltwing Rooftops: yellow lightning logo -->
+<article class="game" data-name="voltwing rooftops lightning rooftop action adventure" data-category="action">
+<div class="game-art"><span class="game-tag">ROOFTOP ACTION</span>
+<img src="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/voltwing-icon.png" alt="Voltwing Rooftops yellow lightning logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+<span class="art-emoji" style="display:none">⚡</span></div>
+<div class="game-info"><h3>Voltwing Rooftops</h3><p>Leap into a rooftop adventure with a lightning-powered identity.</p>
+<div class="game-bottom"><span class="game-type">ACTION · ADVENTURE</span><a class="download-btn" href="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/voltwing_rooftops.apk">DOWNLOAD ↗</a></div></div>
+</article>
 
-      <div class="games-grid" id="gamesGrid">
+<!-- Skyforge Vanguard: blue V logo -->
+<article class="game" data-name="skyforge vanguard futuristic blue action" data-category="action">
+<div class="game-art"><span class="game-tag">FUTURE ACTION</span>
+<img src="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/skyforge-icon.png" alt="Skyforge Vanguard blue V logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+<span class="art-emoji" style="display:none">🛡️</span></div>
+<div class="game-info"><h3>Skyforge Vanguard</h3><p>Enter a futuristic adventure with a bold blue identity.</p>
+<div class="game-bottom"><span class="game-type">ACTION · ADVENTURE</span><a class="download-btn" href="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/skyforge_vanguard.apk">DOWNLOAD ↗</a></div></div>
+</article>
 
-        <!-- BMX BOY -->
-        <article class="game" data-category="sports" data-search="bmx boy bicycle bike stunt sports classic">
-          <div class="game-art">
-            <img
-              src="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/bmx-boy-logo.jpg"
-              alt="BMX Boy logo"
-              loading="lazy"
-              onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
-            >
-            <span class="art-placeholder" style="display:none">🚴</span>
-          </div>
-          <div class="game-info">
-            <h3>BMX Boy</h3>
-            <p>Ride your bike, perform stunts and overcome obstacles.</p>
-            <div class="game-meta"><span class="tag">Sports</span></div>
-            <a class="download" href="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/BMXBoy_1.16.46_arm64.apk" download>Download APK ↓</a>
-          </div>
-        </article>
+</div>
+<div class="empty-state" id="emptyState"><strong>No games found ✦</strong>Try another game name or choose a different category.</div>
+</section>
 
-        <!-- BMX BOY 3D -->
-        <article class="game" data-category="sports" data-search="bmx boy 3d bicycle bike sports">
-          <div class="game-art">
-            <img
-              src="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/bmx-boy-3d-logo.png"
-              alt="BMX Boy 3D logo"
-              loading="lazy"
-              onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
-            >
-            <span class="art-placeholder" style="display:none">🚵</span>
-          </div>
-          <div class="game-info">
-            <h3>BMX Boy 3D</h3>
-            <p>Take on a 3D biking adventure.</p>
-            <div class="game-meta"><span class="tag">Sports</span></div>
-            <a class="download" href="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/bmx_boy_3d%20(1).apk" download>Download APK ↓</a>
-          </div>
-        </article>
+<section class="section" id="about">
+<div class="section-top"><div><div class="overline">BEHIND THE PIXELS</div><h2>Welcome to Our Universe<span class="gradient">.</span></h2></div></div>
+<div class="about">
+<div class="about-main"><span class="pill">✦ THE AFNAN YAZ PRODUCTIONS</span>
+<h2>Not just games.<br><span class="gradient">A whole vibe.</span></h2>
+<p>Welcome to our gaming universe — a place to discover games, revisit favourites and explore new adventures. We want every visit to feel exciting, whether you're looking for a quick arcade session or a racing challenge.</p>
+<p style="margin-top:12px">Browse the collection, find a game that matches your mood and follow its download link. New projects can join the universe as our collection grows.</p></div>
+<div class="about-side"><div class="about-mark">✧</div><h3>Made for the love of gaming.</h3>
+<p>A mobile-friendly game hub with a simple mission: make discovering games feel effortless and fun.</p>
+<a class="primary-btn" href="#games" style="align-self:flex-start;margin-top:22px">Back to Games ↑</a></div>
+</div></section>
+</main>
+<footer><div class="footer-brand">AFNAN YAZ<span>™</span> PRODUCTIONS</div><p>Explore. Play. Repeat.</p><p>© 2026 The Afnan Yaz Productions. All rights reserved.</p><a class="back-top" href="#home">↑ Back to the top</a></footer>
 
-        <!-- HIGHWAY RUSH 2D -->
-        <article class="game" data-category="racing" data-search="highway rush 2d car driving traffic racing">
-          <div class="game-art">
-            <span class="art-placeholder">🏎️</span>
-          </div>
-          <div class="game-info">
-            <h3>Highway Rush 2D</h3>
-            <p>Race through the highway and dodge traffic.</p>
-            <div class="game-meta"><span class="tag">Racing</span></div>
-            <a class="download" href="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/Highway-Rush-2D.apk" download>Download APK ↓</a>
-          </div>
-        </article>
+<script>
+(function(){
+const search=document.getElementById("gameSearch");
+const cards=Array.from(document.querySelectorAll(".game"));
+const filters=Array.from(document.querySelectorAll(".filter"));
+const count=document.getElementById("gameCount");
+const empty=document.getElementById("emptyState");
+let selectedCategory="all";
 
-        <!-- T-REX JUNGLE RUN -->
-        <article class="game" data-category="arcade" data-search="t rex jungle run dinosaur running arcade">
-          <div class="game-art">
-            <span class="art-placeholder">🦖</span>
-          </div>
-          <div class="game-info">
-            <h3>T-Rex Jungle Run</h3>
-            <p>Run, dodge obstacles and survive the jungle.</p>
-            <div class="game-meta"><span class="tag">Arcade</span></div>
-            <a class="download" href="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/app-debug%20%283%29.apk" download>Download APK ↓</a>
-          </div>
-        </article>
-
-        <!-- VOLTWING ROOFTOPS -->
-        <article class="game" data-category="action" data-search="voltwing rooftops yellow lightning rooftop action adventure">
-          <div class="game-art">
-            <img
-              src="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/voltwing-icon.png"
-              alt="Voltwing Rooftops yellow logo"
-              loading="lazy"
-              onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
-            >
-            <span class="art-placeholder" style="display:none">⚡</span>
-          </div>
-          <div class="game-info">
-            <h3>Voltwing Rooftops</h3>
-            <p>Explore the rooftops in a lightning-powered adventure.</p>
-            <div class="game-meta"><span class="tag">Action</span></div>
-            <a class="download" href="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/voltwing_rooftops.apk" download>Download APK ↓</a>
-          </div>
-        </article>
-
-        <!-- SKYFORGE VANGUARD -->
-        <article class="game" data-category="action" data-search="skyforge vanguard blue futuristic action vanguard">
-          <div class="game-art">
-            <img
-              src="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/skyforge-icon.png"
-              alt="Skyforge Vanguard blue logo"
-              loading="lazy"
-              onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
-            >
-            <span class="art-placeholder" style="display:none">🛡️</span>
-          </div>
-          <div class="game-info">
-            <h3>Skyforge Vanguard</h3>
-            <p>Enter a futuristic adventure with a bold blue identity.</p>
-            <div class="game-meta"><span class="tag">Action</span></div>
-            <a class="download" href="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/skyforge_vanguard.apk" download>Download APK ↓</a>
-          </div>
-        </article>
-
-        <!-- SPIDER-MAN -->
-        <article class="game" data-category="action" data-search="spider man ultimate power superhero action">
-          <div class="game-art"><span class="art-placeholder">🕸️</span></div>
-          <div class="game-info">
-            <h3>Spider-Man: Ultimate Power</h3>
-            <p>Jump into a superhero action adventure.</p>
-            <div class="game-meta"><span class="tag">Action</span></div>
-            <a class="download" href="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/Spider-Man-UltimatePower-ARM64.apk" download>Download APK ↓</a>
-          </div>
-        </article>
-
-        <!-- SKATER BOY -->
-        <article class="game" data-category="sports" data-search="skater boy skateboard skate sports">
-          <div class="game-art"><span class="art-placeholder">🛹</span></div>
-          <div class="game-info">
-            <h3>Skater Boy</h3>
-            <p>Skate through obstacles and test your timing.</p>
-            <div class="game-meta"><span class="tag">Sports</span></div>
-            <a class="download" href="https://raw.githubusercontent.com/Fozayelafnan/theafnanyazproductions.github.io/main/skater-boy-1-18-50-arm64-fixed.apk" download>Download APK ↓</a>
-          </div>
-        </article>
-
-      </div>
-
-      <div class="empty" id="emptyMessage">
-        <h3>No games found</h3>
-        <p>Try another name or select a different category.</p>
-      </div>
-    </section>
-
-    <section class="section" id="about">
-      <div class="about-box">
-        <h2>About <span class="gradient">Our Studio</span></h2>
-        <p>
-          The Afnan Yaz Productions is an independent gaming website focused
-          on sharing games and gaming experiences. Explore the collection,
-          discover new titles and enjoy your next adventure.
-        </p>
-        <p>
-          <strong>Installation note:</strong> Android compatibility depends
-          on each game's Android version requirements, CPU architecture and
-          other technical requirements. A download link does not guarantee
-          that every APK will run on every device.
-        </p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <strong>The Afnan Yaz Productions</strong><br>
-    Official Game Website<br>
-    © <span id="year"></span> All rights reserved.
-  </footer>
-
-  <script>
-    const searchInput = document.getElementById("gameSearch");
-    const filterButtons = document.querySelectorAll(".filter-btn");
-    const games = Array.from(document.querySelectorAll(".game"));
-    const emptyMessage = document.getElementById("emptyMessage");
-
-    let activeCategory = "all";
-
-    function filterGames() {
-      const query = searchInput.value.trim().toLowerCase();
-      let visibleCount = 0;
-
-      games.forEach(game => {
-        const category = game.dataset.category || "";
-        const searchableText =
-          (game.dataset.search || "") + " " + game.innerText;
-
-        const matchesCategory =
-          activeCategory === "all" || category === activeCategory;
-
-        const matchesSearch =
-          searchableText.toLowerCase().includes(query);
-
-        const show = matchesCategory && matchesSearch;
-        game.style.display = show ? "" : "none";
-
-        if (show) visibleCount++;
-      });
-
-      emptyMessage.style.display = visibleCount === 0 ? "block" : "none";
-    }
-
-    searchInput.addEventListener("input", filterGames);
-
-    filterButtons.forEach(button => {
-      button.addEventListener("click", () => {
-        activeCategory = button.dataset.filter;
-
-        filterButtons.forEach(item => {
-          const active = item === button;
-          item.classList.toggle("active", active);
-          item.setAttribute("aria-pressed", String(active));
-        });
-
-        filterGames();
-      });
-    });
-
-    document.getElementById("year").textContent = new Date().getFullYear();
-    document.getElementById("gameCount").textContent = games.length;
-
-    filterGames();
-  </script>
+function updateGames(){
+const query=search.value.trim().toLowerCase();
+let visible=0;
+cards.forEach(function(card){
+const name=((card.dataset.name||"")+" "+card.innerText).toLowerCase();
+const matchesSearch=name.includes(query);
+const matchesCategory=selectedCategory==="all"||card.dataset.category===selectedCategory;
+const show=matchesSearch&&matchesCategory;
+card.style.display=show?"":"none";
+if(show)visible++;
+});
+count.textContent=String(visible).padStart(2,"0")+(visible===1?" GAME":" GAMES");
+empty.style.display=visible===0?"block":"none";
+}
+search.addEventListener("input",updateGames);
+filters.forEach(function(button){
+button.addEventListener("click",function(){
+selectedCategory=button.dataset.filter;
+filters.forEach(function(item){item.classList.toggle("active",item===button);});
+updateGames();
+});
+});
+updateGames();
+})();
+</script>
 </body>
 </html>
